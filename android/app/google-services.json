@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819296277500",
+    "project_id": "quran-tafseer-videos",
+    "storage_bucket": "quran-tafseer-videos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819296277500:android:c628c39e78caabd30dd879",
+        "android_client_info": {
+          "package_name": "com.innovative.solutions.qurantafseer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819296277500-rqmcc5q86q9omp49l86fu6os63u99b6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5pYZ2qWDH0YNea3p7mGZOnMwm7M2sps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819296277500-rqmcc5q86q9omp49l86fu6os63u99b6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

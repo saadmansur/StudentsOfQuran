@@ -1,0 +1,351 @@
+
+[
+  {"en_name": "Al-Fatihah", "surah":"1",
+    "name": "الفاتحة",
+    "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+    "surahParts":
+    []
+  },
+  {
+    "en_name": "Al-Baqarah", "surah":"2",
+    "name": "البقرة",
+    "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Aal-e-Imran", "surah":"3", "name": "آل عمران", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "An-Nisa", "surah":"4", "name": "النساء", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Maidah", "surah":"5", "name": "المائدة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Anam", "surah":"6", "name": "الأنعام", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Araf", "surah":"7", "name": "الأعراف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Anfal", "surah":"8", "name": "الأنفال", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Taubah", "surah":"9", "name": "التوبة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Yunus", "surah":"10", "name": "يونس", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Hud", "surah":"11", "name": "هود", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Yusuf", "surah":"12", "name": "يوسف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Ar-Rad", "surah":"13", "name": "الرعد", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Ibrahim", "surah":"14", "name": "ابراهيم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Hijr", "surah":"15", "name": "الحجر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Nahl", "surah":"16", "name": "النحل", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Isra", "surah":"17", "name": "الإسراء", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Kahf", "surah":"18", "name": "الكهف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Maryam", "surah":"19", "name": "مريم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Ta Ha", "surah":"20", "name": "طه", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Anbiya", "surah":"21", "name": "الأنبياء", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Hajj", "surah":"22", "name": "الحج", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Muminun", "surah":"23", "name": "المؤمنون", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "An-Nur", "surah":"24", "name": "النور", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Furqan", "surah":"25", "name": "الفرقان", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Ash-Shuara", "surah":"26", "name": "الشعراء", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "An-Naml", "surah":"27", "name": "النمل", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Al-Qasas", "surah":"28", "name": "القصص", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "Ar-Rum", "surah":"29", "name": "العنكبوت", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"30", "name": "الروم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"31", "name": "لقمان", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"32", "name": "السجدة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"33", "name": "الأحزاب", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"34", "name": "سبإ", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"35", "name": "فاطر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"36", "name": "يس", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"37", "name": "الصافات", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"38", "name": "ص", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"39", "name": "الزمر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"40", "name": "غافر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"41", "name": "فصلت", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"42", "name": "الشورى", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"43", "name": "الزخرف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"44", "name": "الدخان", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"45", "name": "الجاثية", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"46", "name": "الأحقاف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"47", "name": "محمد", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"48", "name": "الفتح", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"49", "name": "الحجرات", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"50", "name": "ق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"51", "name": "الذاريات", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"52", "name": "الطور", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"53", "name": "النجم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"54", "name": "القمر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"55", "name": "الرحمن", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"56", "name": "الواقعة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"57", "name": "الحديد", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"58", "name": "المجادلة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"59", "name": "الحشر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"60", "name": "الممتحنة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"61", "name": "الصف", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"62", "name": "الجمعة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"63", "name": "المنافقون", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20AlMunafiqun_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"64", "name": "التغابن", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Taghabun_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"65", "name": "الطلاق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"66", "name": "التحريم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"67", "name": "الملك", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"68", "name": "القلم", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"69", "name": "الحاقة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"70", "name": "المعارج", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"71", "name": "نوح", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"72", "name": "الجن", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"73", "name": "المزمل", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"74", "name": "المدثر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"75", "name": "القيامة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"76", "name": "الانسان", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"77", "name": "المرسلات", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Muraslat_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"78", "name": "النبإ", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"79", "name": "النازعات", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"80", "name": "عبس", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"81", "name": "التكوير", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Takwir_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"82", "name": "الإنفطار", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Infitar_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"83", "name": "المطففين", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Mutaffifin_Final.mp4",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"84", "name": "الإنشقاق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"85", "name": "البروج", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"86", "name": "الطارق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"87", "name": "الأعلى", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"88", "name": "الغاشية", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"89", "name": "الفجر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"90", "name": "البلد", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"91", "name": "الشمس", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"92", "name": "الليل", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"93", "name": "الضحى", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"94", "name": "الشرح", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"95", "name": "التين", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"96", "name": "العلق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"97", "name": "القدر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"98", "name": "البينة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"99", "name": "الزلزلة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"100", "name": "العاديات", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"101", "name": "القارعة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"102", "name": "التكاثر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"103", "name": "العصر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"104", "name": "الهمزة", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"105", "name": "الفيل", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"106", "name": "قريش", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"107", "name": "الماعون", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"108", "name": "الكوثر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"109", "name": "الكافرون", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"110", "name": "النصر", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"111", "name": "المسد", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"112", "name": "الإخلاص", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "surah":"113", "name": "الفلق", "yt_link":"",
+    "surahParts":
+    []},
+  {"en_name": "", "en_name": "", "surah":"114", "name": "الناس", "yt_link":"",
+    "surahParts":
+    []}
+]
