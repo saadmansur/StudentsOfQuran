@@ -19,10 +19,10 @@ class _MyHomePageState extends State<homePage> {
     super.initState();
     WidgetsBinding.instance!.addPostFrameCallback((_) async {
       final remoteConfig = await RemoteConfig.instance;
-      final defaultValue=<String,dynamic>{
-        'author':'developer',
-        "channel":"developer"
-      };
+//      final defaultValue=<String,dynamic>{
+//        'author':'developer',
+//        "channel":"developer"
+//      };
       try {
         await remoteConfig.setConfigSettings(RemoteConfigSettings(
           fetchTimeout: const Duration(hours: 4), //cache refresh time
@@ -70,18 +70,19 @@ class _MyHomePageState extends State<homePage> {
               Expanded(
                 child: Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height / 1.5,
-                  padding: EdgeInsets.fromLTRB(
-                      0, MediaQuery.of(context).size.height / 5, 0, 0),
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  padding: EdgeInsets.only(
+                      left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:50),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     physics: AlwaysScrollableScrollPhysics(),
-                    child: Text(
-                       widget.hadeesText,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22.0,
-                            color: Colors.white)),
+                    child: Padding (padding: EdgeInsets.only(left:15, bottom: 15, right: 15, top:15), //apply padding to some sides only
+                      child: Text(
+                          widget.hadeesText,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22.0,
+                              color: Colors.white)) )
                   ),
                 ),
 //    ),
