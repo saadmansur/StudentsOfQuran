@@ -10,7 +10,6 @@ import '../Utils.dart';
 import '../model/SurahInfo.dart';
 import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
 
-
 class surahListPage extends StatelessWidget {
   static const String routeName = '/surahListPage';
 
@@ -25,7 +24,6 @@ class surahListPage extends StatelessWidget {
           title: Text("Surah's"),
           backgroundColor: HexColor("007055"),
         ),
-
         body: Stack(
           children: <Widget>[
             Center(
@@ -36,16 +34,11 @@ class surahListPage extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            Center(
-              child: MyHomePage()
-            ),
+            Center(child: MyHomePage()),
           ],
         ),
-        drawer: NavDrawer()
-    );
+        drawer: NavDrawer());
   }
-
-
 }
 
 class MyHomePage extends StatefulWidget {
@@ -60,116 +53,130 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: FutureBuilder(
-            future: DefaultAssetBundle.of(context)
-                .loadString('assets/details.json'),
-            builder: (context, snapshot) {
-              // Decode the JSON
-              var newData = json.decode(snapshot.data.toString());
+      child: FutureBuilder(
+        future:
+            DefaultAssetBundle.of(context).loadString('assets/details.json'),
+        builder: (context, snapshot) {
+          // Decode the JSON
+          var newData = json.decode(snapshot.data.toString());
 
-              return ListView.builder(
-                itemBuilder: (BuildContext context, int index) {
-                  SurahInfo surahToPlay = SurahInfo(surahNumber: newData[index]['surah'],arabicTitle: newData[index]['name'], ytLink:newData[index]['yt_link'], englishTitle: "English");
-                  return Container(
-                    color: HexColor("05302D"),
-                      padding: const EdgeInsets.only(
-                          top: 0, bottom: 0, left: 16, right: 16),
+          return ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              SurahInfo surahToPlay = SurahInfo(
+                  surahNumber: newData[index]['surah'],
+                  arabicTitle: newData[index]['name'],
+                  ytLink: newData[index]['yt_link'],
+                  englishTitle: "English");
+              return Container(
+                  color: HexColor("05302D"),
+                  padding: const EdgeInsets.only(
+                      top: 0, bottom: 0, left: 16, right: 16),
                   child: InkWell(
                       onTap: () {
-                        if (newData[index]['surahParts'].length == 0 ) {
+                        if (newData[index]['surahParts'].length == 0) {
 //                          Navigator.push(context, MaterialPageRoute(
 //                              builder: (context) =>
 //                                  YoutubePlayerDemo(
 //                                      surah: surahToPlay)));
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context) =>
-                                  ChewieDemo(surah: surahToPlay)));
-                        }
-                        else{
-                          List<String> surahPartsList = newData[index]['surahParts'].cast<String>();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ChewieDemo(surah: surahToPlay)));
+                        } else {
+                          List<String> surahPartsList =
+                              newData[index]['surahParts'].cast<String>();
                           print(surahPartsList[0]);
                           showDialog(
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   backgroundColor: HexColor("007055"),
-                                  title:  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                Container(child: Padding(
-
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("سورة " + newData[index]['name'], style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22.0,
-                                        color: HexColor("#ffe200")),),
-                                  ),color: HexColor("05302D"),)]),
-                                  content: setupAlertDialoadContainer(context,  surahPartsList),
+                                  title: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              "سورة " + newData[index]['name'],
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22.0,
+                                                  color: HexColor("#ffe200")),
+                                            ),
+                                          ),
+                                          color: HexColor("05302D"),
+                                        )
+                                      ]),
+                                  content: setupAlertDialoadContainer(
+                                      context, surahPartsList),
                                 );
-                              }
-                          );
+                              });
                         }
                       },
-                  child: Card(
-                    color: HexColor("4F7B6E"),
-                    child: Padding(
-                      padding: const EdgeInsets.all(
-                           16),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Card(
+                        color: HexColor("4F7B6E"),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                                Text(
-                                  newData[index]['en_name'],
-                                  //'Note Title',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 22.0,
-                                      color: HexColor("#ffe200")),
-                                ),
-                              Text(
-                                newData[index]['surah'],
-                                //'Note Text',
-                                style: TextStyle(color: Colors.white),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    newData[index]['en_name'],
+                                    //'Note Title',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22.0,
+                                        color: HexColor("#ffe200")),
+                                  ),
+                                  Text(
+                                    newData[index]['surah'],
+                                    //'Note Text',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  Text(
+                                    "سورة " + newData[index]['name'],
+                                    //'Note Title',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22.0,
+                                        color: HexColor("#ffe200")),
+                                  ),
+                                  Text(
+                                    newData[index]['surah'],
+                                    //'Note Text',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: <Widget>[
-                             Text(
-                                  "سورة " + newData[index]['name'],
-                                  //'Note Title',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 22.0,
-                                      color: HexColor("#ffe200")),
-                                ),
-                              Text(
-                                newData[index]['surah'],
-                                //'Note Text',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  )))
-                  ;
-                },
-                itemCount: newData == null ? 0 : newData.length,
-              );
+                        ),
+                      )));
             },
-          ),
-        ));
+            itemCount: newData == null ? 0 : newData.length,
+          );
+        },
+      ),
+    ));
   }
 
   SurahInfo createSurahInstance(String surahPartText) {
     List<String> parts = surahPartText.split('|');
-        return SurahInfo(surahNumber: parts[0],arabicTitle: parts[1], ytLink:parts[2].trim(), englishTitle:parts[3]);
+    return SurahInfo(
+        surahNumber: parts[0],
+        arabicTitle: parts[1],
+        ytLink: parts[2].trim(),
+        englishTitle: parts[3]);
   }
 
   Widget setupAlertDialoadContainer(context, List<String> surahPartsList) {
@@ -181,7 +188,6 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 300.0, // Change as per your requirement
           width: 300.0, // Change as per your requirement
           child: ListView.builder(
-
             shrinkWrap: true,
             itemCount: surahPartsList.length,
             itemBuilder: (BuildContext context, int index) {
@@ -199,21 +205,43 @@ class _MyHomePageState extends State<MyHomePage> {
                       top: 8, bottom: 8, left: 8, right: 8),
                   child: InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) =>
-                                YoutubePlayerDemo(
-                                    surah: surah)));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    YoutubePlayerDemo(surah: surah)));
                       },
                       child: Card(
                         color: HexColor("4F7B6E"),
                         child: Padding(
-                          padding: const EdgeInsets.all(
-                              8),
+                          padding: const EdgeInsets.all(8),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-
-                              Column(
+                              Expanded(
+                                  child: Container(
+                                alignment: Alignment.center,
+//                                height: MediaQuery.of(context).size.height * 0.8,
+//                                padding: EdgeInsets.only(
+//                                    left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:50),
+//                                child: SingleChildScrollView(
+//                                    scrollDirection: Axis.vertical,
+//                                    physics: AlwaysScrollableScrollPhysics(),
+                                    child: Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 15,
+                                            bottom: 5,
+                                            right: 15,
+                                            top: 5),
+                                        //apply padding to some sides only
+                                         child:Text(surah.arabicTitle + "\n" + surah.englishTitle,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18.0,
+                                                color: HexColor("#ffe200")))
+                                    ),
+                              ))
+                              /*Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Center(
@@ -240,27 +268,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       )
                                   )
-                                   /*Flexible(
-                                    child: Text('Add long tehhjhghgjhhghgjhgjhgjhghjghjghgjhghjghghhjghghghghghjghjxt here',
-                                      maxLines: 1,
-                                      softWrap: true
-                                    ),
-                                  )*/
-                                  /*Text(
-                                    surah.arabicTitle,
-                                    //'Note Title',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.0,
-                                        color: HexColor("#ffe200")),
-                                  ),
-                                  Text(
-                                    surah.englishTitle,
-                                    //'Note Text',
-                                    style: TextStyle(color: Colors.white),
-                                  ),*/
                                 ],
-                              ),
+                              ),*/
                             ],
                           ),
                         ),
