@@ -9,6 +9,7 @@ import '../services/SurahService.dart';
 import '../Utils.dart';
 import '../model/SurahInfo.dart';
 import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class surahListPage extends StatelessWidget {
   static const String routeName = '/surahListPage';

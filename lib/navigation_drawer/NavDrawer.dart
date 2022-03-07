@@ -5,6 +5,7 @@ import 'package:flutterapp/routes/drawer_routes.dart';
 
 import '../pages/kidsSurahScreen.dart';
 import '../pages/surahListPage.dart';
+import '../pages/BayanVideosPage.dart';
 import '../widgets/createDrawerHeader.dart';
 import '../Utils.dart';
 
@@ -94,7 +95,7 @@ class NavDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Islamic Articles',
+              title: Text('Video Lectures',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16.0,
@@ -104,6 +105,8 @@ class NavDrawer extends StatelessWidget {
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => BayanVideosPage()));
 //                Navigator.of(context).push(MaterialPageRoute(
 //                    builder: (BuildContext context) => ExpansionScreen()));
               },

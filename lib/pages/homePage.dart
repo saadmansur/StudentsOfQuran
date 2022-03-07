@@ -5,24 +5,24 @@ import 'package:flutterapp/navigation_drawer/NavDrawer.dart';
 import 'package:flutterapp/services/address_services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class homePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
   static const String routeName = '/homePage';
    String hadeesText = "";
+
 }
 class _MyHomePageState extends State<homePage> {
+
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance!.addPostFrameCallback((_) async {
       final remoteConfig = await RemoteConfig.instance;
-//      final defaultValue=<String,dynamic>{
-//        'author':'developer',
-//        "channel":"developer"
-//      };
+
       try {
         await remoteConfig.setConfigSettings(RemoteConfigSettings(
           fetchTimeout: const Duration(hours: 4), //cache refresh time
@@ -55,6 +55,7 @@ class _MyHomePageState extends State<homePage> {
         title: Text("Today's Hadees"),
         backgroundColor: HexColor("007055"),
       ),
+
       body: Stack(
         children: <Widget>[
           Center(
@@ -85,19 +86,6 @@ class _MyHomePageState extends State<homePage> {
                               color: Colors.white)) )
                   ),
                 ),
-//    ),
-                // SingleChildScrollView contains a
-                // single child which is scrollable
-//                child: SingleChildScrollView(
-//                  // for Vertical scrolling
-//                  scrollDirection: Axis.vertical,
-//                  child: Text(
-//                      ".mclcmlsdmcldscmdls;msl;cmdsl;ls;mls;m,clds;cmdls;cmdls; l; csl;cmdls;mclds;msl;msl;mls;mcldsml dscdlscmdslmslmcdlsmllmsl;mls; dcmdslmledmelas;dmeal;dmeal;mdal;edma;lmc;almca;lsmcsla;dma;elmx;lasmclsamcsa;lmcxsal;mcsl;amxcasl;mclacdal;sdmcsal;mdcl;adml;asmcxls;amd;lamlscmsal;msal;m sal;cmsl;admwalmdx;ljlsmxl;mswdwl;adwdmw;almdwl;dlmml;dmwl;dswl;mdxw;lamdl;amdwl;mdwlmdwl;as sl;dmwal;mdl;wmdsl;wcnwq ;ldnsqw;ldlw;dw;lndlشَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ",
-//                      style: TextStyle(
-//                          fontWeight: FontWeight.bold,
-//                          fontSize: 28.0,
-//                          color: Colors.white)),
-//                ),
               ),
             ],
           ),
