@@ -92,7 +92,7 @@ class _MyHomePageState extends State<BayanVideosPage> {
                         ),
                       )
                   ),
-                )
+                );
               },
             );
           }
