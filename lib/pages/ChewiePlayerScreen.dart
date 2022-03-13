@@ -211,7 +211,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
         body: Column(
           children: <Widget>[
             Expanded(
-              child: Center(
+              child: Container(
+          color: Colors.black,
+          child:Center(
                 child: _chewieController != null &&
                     _chewieController!
                         .videoPlayerController.value.isInitialized
@@ -226,6 +228,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
                     Text('Loading'),
                   ],
                 ),
+              ),
               ),
             ),
     /*TextButton(
