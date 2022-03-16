@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sol.innovative.com.flutterapp">
    <application
-        android:label="StudentsOfQuran"
+        android:label="Students Of Quran"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
