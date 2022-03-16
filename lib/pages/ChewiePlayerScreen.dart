@@ -225,7 +225,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
                   children: const [
                     CircularProgressIndicator(),
                     SizedBox(height: 20),
-                    Text('Loading'),
+                    Text('Loading', style: TextStyle(color: Colors.white)),
                   ],
                 ),
               ),
