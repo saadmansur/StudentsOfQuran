@@ -57,7 +57,14 @@ class NavDrawer extends StatelessWidget {
                       color: HexColor("#ffe200"))),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => surahListPage()));
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => surahListPage()),settings: RouteSettings(name: 'Surah List Screen View'));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => surahListPage(),
+                    settings: RouteSettings(name: 'Surah List Screen View'),
+                  ),
+                );
               },
             ),
             ExpansionTile(
@@ -105,10 +112,13 @@ class NavDrawer extends StatelessWidget {
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => BayanVideosPage()));
-//                Navigator.of(context).push(MaterialPageRoute(
-//                    builder: (BuildContext context) => ExpansionScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BayanVideosPage(),
+                    settings: RouteSettings(name: 'Video Lectures List Screen View'),
+                  ),
+                );
               },
             ),
           ],

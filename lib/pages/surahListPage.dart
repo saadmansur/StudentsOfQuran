@@ -83,7 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      ChewieDemo(surah: surahToPlay)));
+                                      ChewieDemo(surah: surahToPlay),
+                              settings: RouteSettings(name: 'Surah Player Screen: ' + surahToPlay.arabicTitle)));
                         } else {
                           List<String> surahPartsList =
                               newData[index]['surahParts'].cast<String>();
@@ -206,11 +207,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       top: 8, bottom: 8, left: 8, right: 8),
                   child: InkWell(
                       onTap: () {
+/*                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    YoutubePlayerDemo(surah: surah)));*/
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    YoutubePlayerDemo(surah: surah)));
+                                    ChewieDemo(surah: surah),
+                                settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
                       },
                       child: Card(
                         color: HexColor("4F7B6E"),
@@ -235,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             right: 15,
                                             top: 5),
                                         //apply padding to some sides only
-                                         child:Text(surah.arabicTitle + "\n" + surah.englishTitle,
+                                         child:Text(surah.arabicTitle,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18.0,

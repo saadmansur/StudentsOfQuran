@@ -6,7 +6,7 @@ import '../pages/surahListPage.dart';
 import '../routes/drawer_routes.dart';
 import 'package:flutter/services.dart';
 
-//import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
@@ -18,14 +18,20 @@ runApp(MyApp());
 //});
 }
 class MyApp extends StatelessWidget {
+
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  static FirebaseAnalyticsObserver observer =
+  FirebaseAnalyticsObserver(analytics: analytics);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'NavigationDrawer Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      navigatorObservers: <NavigatorObserver>[observer],
       home: homePage(),
       routes:  {
         drawer_routes.home: (context) => homePage(),

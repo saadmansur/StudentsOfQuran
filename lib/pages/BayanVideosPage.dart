@@ -56,10 +56,12 @@ class _MyHomePageState extends State<BayanVideosPage> {
                   child: InkWell(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ChewieDemo(surah: surahToPlay)));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChewieDemo(surah: surahToPlay),
+                            settings: RouteSettings(name: 'Video Lecturees Player Screen:' + surahToPlay.arabicTitle),
+                          ),
+                        );
                       },
 
                       child: Card(

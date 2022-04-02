@@ -2,42 +2,52 @@
 [
   {"en_name": "Al-Fatihah", "surah":"1",
     "name": "الفاتحة",
-    "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+    "yt_link":"https://drive.google.com/uc?export=download&id=1yAOsaxyhY16CddIGaGDlJO9m4RyskUzT",
     "surahParts":
     []
   },
   {
     "en_name": "Al-Baqarah", "surah":"2",
     "name": "البقرة",
-    "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
-    "surahParts":["1 | Rukooh 1 to Rukooh 6 | 3XuRexhrRCo | Rukooh 1 to Rukooh 6",
-      "2 | Rukooh 6 to Rukooh 12 | 3XuRexhrRCo | Rukooh 6 to Rukooh 12",
-      "3 | Rukooh 12 to Rukooh 18 | 3XuRexhrRCo | Rukooh 12 to Rukooh 18",
-      "3 | Rukooh 12 to Rukooh 18 | 3XuRexhrRCo | Rukooh 12 to Rukooh 18",
-      "3 | Rukooh 12 to Rukooh 18 | rerrrr | Rukooh 12 to Rukooh 18",
-      "3 | Rukooh 12 to Rukooh 18 | rerrrr | Rukooh 12 to Rukooh 18",
-      "3 | Rukooh 12 to Rukooh 18 | rerrrr | Rukooh 12 to Rukooh 18",
-      "3 | Rukooh 12 to Rukooh 18 | rerrrr | Rukooh 12 to Rukooh 18"
+    "yt_link":"",
+    "surahParts":["1 | Ayah 1 to Ayah 29 | https://drive.google.com/uc?export=download&id=117vlngjbaBkZQoe9D8DIQ40-5xUAMIpi | test",
+      "2 | Ayah 30 to Ayah 46 | https://drive.google.com/uc?export=download&id=1FHfQ0tNQwpAWP3eQD_uY_fxiI5ALQvLW | test",
+      "3 | Ayah 47 to Ayah 74 | https://drive.google.com/uc?export=download&id=1YtnAPWO9iVsbEU4tblHgXIe6X84gj3B_ | test",
+      "3 | Ayah 75 to Ayah 107 | https://drive.google.com/uc?export=download&id=1xMO6TIwDCH-MWFwtzY3Fwl-rAoeSuhx3 | test",
+      "3 | Ayah 108 to Ayah 141 | https://drive.google.com/uc?export=download&id=1f3KobYuhZZ1lWYmKRe3gKRpie7mXGuWB | test",
+      "3 | Ayah 142 to Ayah 176 | https://drive.google.com/uc?export=download&id=1Kr6hE-dAp2-_W3NvKoCdIn97PigvQb-A | test",
+      "3 | Ayah 177 to Ayah 196 | https://drive.google.com/uc?export=download&id=1NoY0ILA_P8_z-BZrOQ6a2EGuIZSvH5Er | test",
+      "3 | Ayah 197 to Ayah 228 | https://drive.google.com/uc?export=download&id=iZUImva97UOCh0VrFmo4tbTtuWe | test",
+      "3 | Ayah 229 to Ayah 253 | https://drive.google.com/uc?export=download&id=1mL7GgE-bHjXfHxqVJUtiB9IdReHuasU7 | test",
+      "3 | Ayah 254 to Ayah 273 | https://drive.google.com/uc?export=download&id=1wX5CKhkleSG9xTsdHfHRFTswFyxHDc8Q | test",
+      "3 | Ayah 274 to End | https://drive.google.com/uc?export=download&id=1W0XL7Om5-P_1bUNNIgooygKcW9TeRB9p | test"
     ]},
-  {"en_name": "Aal-e-Imran", "surah":"3", "name": "آل عمران", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+  {"en_name": "Aal-e-Imran", "surah":"3", "name": "آل عمران", "yt_link":"",
+    "surahParts":["3 | Ayah 1 to Ayah 48 | https://drive.google.com/uc?export=download&id=iZUImva97UOCh0VrFmo4tbTtuWe | test",
+      "3 | Ayah 49 to Ayah 101 | https://drive.google.com/uc?export=download&id=1mL7GgE-bHjXfHxqVJUtiB9IdReHuasU7 | test",
+      "3 | Ayah 102 to Ayah 151 | https://drive.google.com/uc?export=download&id=1wX5CKhkleSG9xTsdHfHRFTswFyxHDc8Q | test",
+      "3 | Ayah 152 to End | https://drive.google.com/uc?export=download&id=1wX5CKhkleSG9xTsdHfHRFTswFyxHDc8Q | test"
+    ]},
+  {"en_name": "An-Nisa", "surah":"4", "name": "النساء", "yt_link":"",
+    "surahParts":["1 | Ayah 1 to Ayah 30 | https://drive.google.com/uc?id=1GHSaHlibIw-hu-u-vKQJyhcPB9-n3ZV3&export=download | Rukooh 1 to Rukooh 6",
+      "2 | Rukooh 31 to Rukooh 65 | https://drive.google.com/uc?export=view&id=1msVuiEn-W2PhcsHzQtuZ2jwmQ03XvWPz | Rukooh 6 to Rukooh 12",
+      "3 | Rukooh 66 to Rukooh 100 | https://drive.google.com/uc?export=view&id=16q-pVFAJZwNjgPX_QmIGNTIMQQXD0Vu_ | Rukooh 12 to Rukooh 18",
+      "4 | Rukooh 101 to Rukooh 142 | https://drive.google.com/uc?export=view&id=1DMxhcITc0brKY7AjjBY61t8C_MMHDv8Q | Rukooh 12 to Rukooh 18",
+      "5 | Rukooh 143 to End | https://drive.google.com/uc?export=view&id=1yAI8B9AwASHeugR18Mc1sQFclc2ges2j | Rukooh 12 to Rukooh 18"
+    ]},
+  {"en_name": "Al-Maidah", "surah":"5", "name": "المائدة", "yt_link":"https://drive.google.com/uc?export=download&id=d/117vlngjbaBkZQoe9D8DIQ40-5xUAMIpi",
     "surahParts":
     []},
-  {"en_name": "An-Nisa", "surah":"4", "name": "النساء", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+  {"en_name": "Al-Anam", "surah":"6", "name": "الأنعام", "yt_link":"https://drive.google.com/uc?export=download&id=1wzI-RsIkgqUDa7VuixGxko4ixpWWCKwV",
     "surahParts":
     []},
-  {"en_name": "Al-Maidah", "surah":"5", "name": "المائدة", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+  {"en_name": "Al-Araf", "surah":"7", "name": "الأعراف", "yt_link":"https://drive.google.com/uc?export=download&id=1yeWH1KFP_H2qjowFwrpeNWSe_F_wR_5k",
     "surahParts":
     []},
-  {"en_name": "Al-Anam", "surah":"6", "name": "الأنعام", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+  {"en_name": "Al-Anfal", "surah":"8", "name": "الأنفال", "yt_link":"https://drive.google.com/uc?export=download&id=1i-p4XCdrU3hm2YzyFSNR_zrhoGCwvY9o",
     "surahParts":
     []},
-  {"en_name": "Al-Araf", "surah":"7", "name": "الأعراف", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
-    "surahParts":
-    []},
-  {"en_name": "Al-Anfal", "surah":"8", "name": "الأنفال", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
-    "surahParts":
-    []},
-  {"en_name": "Al-Taubah", "surah":"9", "name": "التوبة", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
+  {"en_name": "Al-Taubah", "surah":"9", "name": "التوبة", "yt_link":"https://drive.google.com/uc?export=download&id=1M-vQkKTA4_KhBAQJyo-RQr1ncigLj02P",
     "surahParts":
     []},
   {"en_name": "Yunus", "surah":"10", "name": "يونس", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
@@ -199,7 +209,7 @@
   {"en_name": "Al-Jumuah", "surah":"62", "name": "الجمعة", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
     "surahParts":
     []},
-  {"en_name": "Al-Munafiqun", "surah":"63", "name": "المنافقون", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20AlMunafiqun_Final.mp4",
+  {"en_name": "Al-Munafiqun", "surah":"63", "name": "المنافقون", "yt_link":"https://drive.google.com/uc?export=download&id=1a3zWu8xVbNmFyx01S9tZFEKZnGlH-Sch",
     "surahParts":
     []},
   {"en_name": "Al-Taghabun", "surah":"64", "name": "التغابن", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Taghabun_Final.mp4",
@@ -253,10 +263,10 @@
   {"en_name": "Abasa", "surah":"80", "name": "عبس", "yt_link":"https://drive.google.com/uc?export=download&id=1yok-DkjCVp6WahHoXpY5vuEUBaflkylb",
     "surahParts":
     []},
-  {"en_name": "At-Takwir", "surah":"81", "name": "التكوير", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Takwir_Final.mp4",
+  {"en_name": "At-Takwir", "surah":"81", "name": "التكوير", "yt_link":"https://drive.google.com/uc?export=download&id=15IhdVvfdfiGttFkaz9tPMdlfoqUCONy4",
     "surahParts":
     []},
-  {"en_name": "Al-Infitar", "surah":"82", "name": "الإنفطار", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Infitar_Final.mp4",
+  {"en_name": "Al-Infitar", "surah":"82", "name": "الإنفطار", "yt_link":"https://drive.google.com/uc?export=download&id=1CDV7FLd3bFy6hSqTsBvpt0uLu1FfLTbx",
     "surahParts":
     []},
   {"en_name": "Al-Mutaffifin", "surah":"83", "name": "المطففين", "yt_link":"https://qurantafseervideos.b-cdn.net/Surah%20Mutaffifin_Final.mp4",
