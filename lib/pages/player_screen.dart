@@ -63,7 +63,6 @@ class _YoutubePlayerDemoState extends State<YoutubePlayerDemo> {
   }
 
   _buildYtbView() {
-    print(widget.surah.ytLink);
     _ytbPlayerController = YoutubePlayerController(
       initialVideoId: widget.surah.ytLink/*videosList[0].youtubeId*/,
       params: YoutubePlayerParams(

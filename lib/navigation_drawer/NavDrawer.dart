@@ -89,7 +89,7 @@ class NavDrawer extends StatelessWidget {
               ))
                   .toList(),
             ),
-            ListTile(
+/*            ListTile(
               title: Text('Hadees Lectures by Dr. Israr',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -100,7 +100,7 @@ class NavDrawer extends StatelessWidget {
 //                Navigator.of(context).push(MaterialPageRoute(
 //                    builder: (BuildContext context) => SubPage()));
               },
-            ),
+            ),*/
             ListTile(
               title: Text('Video Lectures',
                   style: TextStyle(

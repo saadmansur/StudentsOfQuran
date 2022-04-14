@@ -129,7 +129,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
-      autoPlay: false,
+      autoPlay: true,
       looping: true,
 //      additionalOptions: (context) {
 //        return <OptionItem>[
