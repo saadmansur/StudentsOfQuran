@@ -88,7 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         } else {
                           List<String> surahPartsList =
                               newData[index]['surahParts'].cast<String>();
-                          print(surahPartsList[0]);
                           showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -146,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
                                   Text(
-                                    "سورة " + newData[index]['name'],
+                                    index != 0 && index != 115? "سورة " + newData[index]['name']: "",
                                     //'Note Title',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,

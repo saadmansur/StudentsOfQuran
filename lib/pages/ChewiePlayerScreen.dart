@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/pages/ChewieListItem.dart';
 import 'package:video_player/video_player.dart';
+import 'package:wakelock/wakelock.dart';
 
 import '../Utils.dart';
 import '../model/SurahInfo.dart';
@@ -36,6 +37,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       setState(() {
+        Wakelock.enable();
       });
     });
   }
@@ -131,6 +133,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
       videoPlayerController: _videoPlayerController1,
       autoPlay: true,
       looping: true,
+      allowedScreenSleep: false,
 //      additionalOptions: (context) {
 //        return <OptionItem>[
 //          OptionItem(
