@@ -318,8 +318,11 @@
     "en_name": "Al-Ahzab",
     "surah": "33",
     "name": "الأحزاب",
-    "yt_link": "https://drive.google.com/uc?export=download&id=",
-    "surahParts": []
+    "yt_link": "",
+    "surahParts": [
+      "3 | Ayah 1 to 40 | https://drive.google.com/uc?export=view&id=12YlR3fn_sL40XEyv1FIMdhxbG5RicFdX | test",
+      "3 | Ayah 41 to End | https://drive.google.com/uc?export=download&id=1c6a0WvjwomcgxoFHo0wiur1WdrxMVHG3 | test"
+    ]
   },
   {
     "en_name": "Saba",
