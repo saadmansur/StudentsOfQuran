@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   surahNumber: newData[index]['surah'],
                   arabicTitle: newData[index]['name'],
                   ytLink: newData[index]['yt_link'],
-                  englishTitle: "English");
+                  englishTitle: "");
               return Container(
                   color: HexColor("05302D"),
                   padding: const EdgeInsets.only(

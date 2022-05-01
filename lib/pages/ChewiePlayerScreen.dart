@@ -1,4 +1,3 @@
-
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +18,7 @@ class ChewieDemo extends StatefulWidget {
 
   ChewieDemo({Key? key, required this.surah}) : super(key: key);
   final SurahInfo surah;
+
   @override
   State<StatefulWidget> createState() {
     return _ChewieDemoState();
@@ -132,8 +132,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       autoPlay: true,
-      looping: true,
-      allowedScreenSleep: false,
+      looping: false,
+      showOptions: false,
+
 //      additionalOptions: (context) {
 //        return <OptionItem>[
 //          OptionItem(
@@ -148,12 +149,12 @@ class _ChewieDemoState extends State<ChewieDemo> {
         padding: const EdgeInsets.all(10.0),
         child: subtitle is InlineSpan
             ? RichText(
-          text: subtitle,
-        )
+                text: subtitle,
+              )
             : Text(
-          subtitle.toString(),
-          style: const TextStyle(color: Colors.black),
-        ),
+                subtitle.toString(),
+                style: const TextStyle(color: Colors.black),
+              ),
       ),
 
       // Try playing around with some of these other options:
@@ -184,10 +185,11 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return/* WillPopScope(
+    return /* WillPopScope(
         onWillPop: () async {
           return true;},
-     child:*/MaterialApp(
+     child:*/
+        MaterialApp(
       title: widget.surah.arabicTitle,
 //      theme: AppTheme.light.copyWith(
 //        platform: _platform ?? Theme.of(context).platform,
@@ -203,9 +205,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
               },
             ),
             centerTitle: true,
-    title: Text(widget.surah.arabicTitle, style: TextStyle(color: Colors.white)
-    )
-        ),
+            title: Text(
+                widget.surah.englishTitle.length > 0?  widget.surah.englishTitle + "  -\t" + widget.surah.arabicTitle: widget.surah.arabicTitle,
+                style: TextStyle(color: Colors.white))),
         /*appBar: AppBar(
             backgroundColor: HexColor("007055"),
             iconTheme: const IconThemeData(color: Colors.white),
@@ -215,30 +217,35 @@ class _ChewieDemoState extends State<ChewieDemo> {
           children: <Widget>[
             Expanded(
               child: Container(
-          color: Colors.black,
-          child:Center(
-                child: _chewieController != null &&
-                    _chewieController!
-                        .videoPlayerController.value.isInitialized
-                    ? Chewie(
-                  controller: _chewieController!,
-                )
-                    : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    CircularProgressIndicator(),
-                    SizedBox(height: 20),
-                     Padding (padding: EdgeInsets.only(left:15, bottom: 15, right: 15, top:15), //apply padding to some sides only
-                        child: Text('Loading Video. It can take upto 15 seconds. Replay the video if it is still not loaded.', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22.0,
-                        color: Colors.white))),
-                  ],
+                color: Colors.black,
+                child: Center(
+                  child: _chewieController != null &&
+                          _chewieController!
+                              .videoPlayerController.value.isInitialized
+                      ? Chewie(
+                          controller: _chewieController!,
+                        )
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            CircularProgressIndicator(),
+                            SizedBox(height: 20),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: 15, bottom: 15, right: 15, top: 15),
+                                //apply padding to some sides only
+                                child: Text(
+                                    'Loading Video. It can take upto 15 seconds. Replay the video if it is still not loaded.',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22.0,
+                                        color: Colors.white))),
+                          ],
+                        ),
                 ),
               ),
-              ),
             ),
-    /*TextButton(
+            /*TextButton(
               onPressed: () {
                 _chewieController?.enterFullScreen();
               },
@@ -402,7 +409,6 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }*/
-
 
 /*
 * /*,
