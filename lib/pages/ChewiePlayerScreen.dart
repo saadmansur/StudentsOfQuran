@@ -1,12 +1,15 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/pages/ChewieListItem.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wakelock/wakelock.dart';
-
+import 'dart:convert';
 import '../Utils.dart';
 import '../model/SurahInfo.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ChewieDemo extends StatefulWidget {
 //  const ChewieDemo({
@@ -30,9 +33,18 @@ class _ChewieDemoState extends State<ChewieDemo> {
   late VideoPlayerController _videoPlayerController1;
   ChewieController? _chewieController;
 
+  final _storage = const FlutterSecureStorage();
+  int positionToStart = 0;
+
   @override
-  void initState() {
+  void initState()  {
     super.initState();
+getResumePoint();
+//    print(_storage.read(key:widget.surah.surahNumber + widget.surah.englishTitle));
+//    positionToStart = containsKeyInSecureData(widget.surah.surahNumber + widget.surah.englishTitle) == false? 0:
+//    int.parse((_storage.read(key: widget.surah.surahNumber + widget.surah.englishTitle)).toString());
+
+//    int.parse(_storage.read(key: widget.surah.surahNumber + widget.surah.englishTitle)  != null ? (_storage.read(key: widget.surah.surahNumber + widget.surah.englishTitle)).toString() : '0');
     initializePlayer();
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
@@ -42,8 +54,31 @@ class _ChewieDemoState extends State<ChewieDemo> {
     });
   }
 
+  void getResumePoint() async {
+    if(await _storage.containsKey(key: widget.surah.surahNumber + widget.surah.englishTitle, aOptions: _getAndroidOptions())){
+    String? value = await _storage.read(
+    key: widget.surah.surahNumber + widget.surah.englishTitle);
+    positionToStart = int.parse(value!);
+    }
+    else {
+    positionToStart = 0;
+    }
+  }
+
+  Future<bool> containsKeyInSecureData(String key1) async {
+    var containsKey = await _storage.containsKey(key: key1, aOptions: _getAndroidOptions());
+    print(containsKey);
+    if(containsKey)
+      print(_storage.read(key: key1));
+    return containsKey;
+  }
+
+  AndroidOptions _getAndroidOptions() => const AndroidOptions(
+    encryptedSharedPreferences: false,
+  );
   @override
   void dispose() {
+    _storage.write(key: widget.surah.surahNumber + widget.surah.englishTitle, value: _videoPlayerController1.value.position.inSeconds.toString());
     _videoPlayerController1.dispose();
 //    _videoPlayerController2.dispose();
     _chewieController?.dispose();
@@ -173,6 +208,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
     );
 
     _chewieController?.enterFullScreen();
+    _chewieController?.seekTo(Duration(seconds: positionToStart));
   }
 
   int currPlayIndex = 0;

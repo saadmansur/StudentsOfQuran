@@ -71,9 +71,9 @@ class _MyHomePageState extends State<homePage> {
               Expanded(
                 child: Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height * 0.8,
+                  height: MediaQuery.of(context).size.height ,
                   padding: EdgeInsets.only(
-                      left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:50),
+                      left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:0),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     physics: AlwaysScrollableScrollPhysics(),
@@ -89,6 +89,24 @@ class _MyHomePageState extends State<homePage> {
               ),
             ],
           ),
+//          Container(
+//              height: 10,
+//              width: 10,
+//              decoration: BoxDecoration(
+//                  image: DecorationImage(
+//                      fit: BoxFit.none,
+//                      image:  AssetImage('lib/images/white_arrow.png'))))
+//          Expanded(
+//            // 5
+//              child: ClipRRect(
+//                  child: Image.asset('lib/images/white_arrow.png',
+//                      fit: BoxFit.cover),
+//                  borderRadius: BorderRadius.circular(12))),
+/*          Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.none,
+                      image:  AssetImage('lib/images/white_arrow.png'))))*/
         ],
       ),
       drawer: NavDrawer(),
