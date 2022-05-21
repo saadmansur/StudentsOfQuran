@@ -15,7 +15,7 @@
     "en_name": "Al-Fatihah",
     "surah": "1",
     "name": "الفاتحة",
-    "yt_link": "https://drive.google.com/uc?export=download&id=1HSaQMDLf00ISaljBwKZPgC-N-fYM9-Rk",
+    "yt_link": "https://1693712952.rsc.cdn77.org/99127147/627f5bc9a7f02174636661-360.mp4",
     "surahParts": []
   },
   {
@@ -489,8 +489,11 @@
     "en_name": "Al-Hadid",
     "surah": "57",
     "name": "الحديد",
-    "yt_link": "https://drive.google.com/uc?export=download&id=",
-    "surahParts": []
+    "yt_link": "",
+    "surahParts": [
+      "1 | Ayah 1 to 20 | https://drive.google.com/uc?export=view&id=13jCKqviV-65cykifSOIfdIPXXrUo5l8K | الحديد",
+      "2 | Ayah 21 to End | https://drive.google.com/uc?export=download&id=16nHYOPaF8S3kC30dm-I-aqipEVaTTACu | الحديد"
+    ]
   },
   {
     "en_name": "Al-Mujadila",

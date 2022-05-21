@@ -45,10 +45,10 @@ class _MyHomePageState extends State<BayanVideosPage> {
                 final DocumentSnapshot documentSnapshot =
                 streamSnapshot.data!.docs[index];
                 SurahInfo surahToPlay = SurahInfo(
-                    surahNumber: "",
+                    surahNumber: documentSnapshot['video_name'],
                     arabicTitle: documentSnapshot['video_name'],
                     ytLink: documentSnapshot['video_link'],
-                    englishTitle: documentSnapshot['video_name']);
+                    englishTitle: "");
                 return Container(
                   color: HexColor("05302D"),
                   padding: const EdgeInsets.only(
