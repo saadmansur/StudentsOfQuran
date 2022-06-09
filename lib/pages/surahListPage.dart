@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/navigation_drawer/NavDrawer.dart';
 import 'package:flutterapp/pages/player_screen.dart';
+import 'package:flutterapp/pages/VideoPageCached.dart';
 import 'package:flutter/services.dart';
 import '../routes/drawer_routes.dart';
 import '../services/SurahService.dart';
@@ -10,6 +11,11 @@ import '../Utils.dart';
 import '../model/SurahInfo.dart';
 import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../services/video_controller_service.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutterapp/model/video.dart';
 
 class surahListPage extends StatelessWidget {
   static const String routeName = '/surahListPage';
@@ -56,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
       child: FutureBuilder(
         future:
-            DefaultAssetBundle.of(context).loadString('assets/details.json'),
+            DefaultAssetBundle.of(context).loadString('assets/details_copy.json'),
         builder: (context, snapshot) {
           // Decode the JSON
           var newData = json.decode(snapshot.data.toString());
@@ -217,6 +223,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                 builder: (context) =>
                                     ChewieDemo(surah: surah),
                                 settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
+
+
+
+//                        Navigator.of(context).push(MaterialPageRoute(
+//                            builder: (BuildContext context) => RepositoryProvider<VideoControllerService>(
+//                              create: (context) => CachedVideoControllerService(DefaultCacheManager()),
+//                              child: MyApp(surah: surah),
+//                            )));
+
                       },
                       child: Card(
                         color: HexColor("4F7B6E"),
@@ -294,5 +309,25 @@ class _MyHomePageState extends State<MyHomePage> {
         )*/
       ],
     );
+  }
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({ required this.surah}) : super();
+  final SurahInfo surah;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Video Player',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      home: ChewieDemo(surah: this.surah)/*VideoPageCached(
+        video: Video(
+          title: 'Fluttering Butterfly',
+          url: 'https://drive.google.com/uc?export=download&id=117vlngjbaBkZQoe9D8DIQ40-5xUAMIpi',
+        ),*/
+      );
   }
 }

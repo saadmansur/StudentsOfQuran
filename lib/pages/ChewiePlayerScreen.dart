@@ -19,7 +19,7 @@ class ChewieDemo extends StatefulWidget {
 
 //  final String title;
 
-  ChewieDemo({Key? key, required this.surah}) : super(key: key);
+  ChewieDemo({ required this.surah}) : super();
   final SurahInfo surah;
 
   @override
