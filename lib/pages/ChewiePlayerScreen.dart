@@ -271,7 +271,7 @@ getResumePoint();
                                     left: 15, bottom: 15, right: 15, top: 15),
                                 //apply padding to some sides only
                                 child: Text(
-                                    'Loading Video. It can take upto 15 seconds. Replay the video if it is still not loaded.',
+                                    'Loading Video. Replay the video if it is still not loaded.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0,
