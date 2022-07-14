@@ -44,7 +44,6 @@ class surahListPage extends StatelessWidget {
             Center(child: MyHomePage()),
           ],
         ),
-        drawer: NavDrawer());
   }
 }
 

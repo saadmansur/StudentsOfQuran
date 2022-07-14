@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/pages/homePage.dart';
 import 'package:flutterapp/pages/player_screen.dart';
 import 'package:flutterapp/routes/drawer_routes.dart';
+import 'package:flutterapp/pages/homePageWithWidgets.dart';
 
 import '../pages/kidsSurahScreen.dart';
 import '../pages/surahListPage.dart';
@@ -135,7 +136,7 @@ class NavDrawer extends StatelessWidget {
     } else {
       Navigator.pop(context);
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) => homePage()));
+          builder: (BuildContext context) => homePageWithWidgets()));
       // function invokes itself
     }
   }

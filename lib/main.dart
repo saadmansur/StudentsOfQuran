@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import '../pages/homePage.dart';
+import '../pages/homePageWithWidgets.dart';
 import '../pages/player_screen.dart';
 import '../pages/surahListPage.dart';
 import '../routes/drawer_routes.dart';
@@ -32,9 +33,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       navigatorObservers: <NavigatorObserver>[observer],
-      home: homePage(),
+      home: homePageWithWidgets(),
       routes:  {
-        drawer_routes.home: (context) => homePage(),
+        drawer_routes.home: (context) => homePageWithWidgets(),
 //        drawer_routes.contact: (context) => YoutubePlayerDemo(title: 'Youtube Player'),
         drawer_routes.surahList: (context) => surahListPage(),
 //        pageRoutes.profile: (context) => profilePage(),

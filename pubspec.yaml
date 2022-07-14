@@ -90,6 +90,12 @@ flutter:
     - assets/details_copy.json
     - assets/address.json
     - lib/images/white_arrow.png
+    - lib/images/hadees.png
+    - lib/images/day.png
+    - lib/images/lectures.png
+    - lib/images/info.png
+    - lib/images/kids.png
+    - lib/images/tafseer.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
