@@ -10,6 +10,7 @@ import 'package:flutterapp/pages/BayanVideosPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
 import 'package:flutterapp/pages/aboutUsPage.dart';
+import 'package:flutterapp/pages/kidsSurahScreen.dart';
 import 'dart:math';
 
 class homePageWithWidgets extends StatefulWidget {
@@ -54,21 +55,27 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         title: Text("Home"),
         backgroundColor: HexColor("007055"),
       ),
-      body: Container(
-          padding: EdgeInsets.all(15.0),
-          alignment: Alignment.center,
-          child: GridView.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 15.0,
-            mainAxisSpacing: 15.0,
-            shrinkWrap: true,
-            children: List.generate(
-              6,
-              (index) {
-                return buildCard(index);
-              },
-            ),
-          )),
+      body: Stack(children: <Widget>[
+//
+//      Center(
+//          child: Image.asset("lib/images/khuddamLogo.jpeg")),
+        Container(
+            padding: EdgeInsets.all(15.0),
+            alignment: Alignment.center,
+            color: HexColor("B9D187"),
+            child: GridView.count(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15.0,
+              mainAxisSpacing: 15.0,
+              shrinkWrap: true,
+              children: List.generate(
+                6,
+                (index) {
+                  return buildCard(index);
+                },
+              ),
+            ))
+      ]),
 /*      body: Stack(
         children: <Widget>[
 //          Center(
@@ -93,7 +100,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
           ),
         ],
       ),*/
-      drawer: NavDrawer(),
+//      drawer: NavDrawer(),
     );
   }
 
@@ -115,7 +122,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "info.png"
     ];
     return Card(
-      elevation: 10.0,
+      elevation: 5.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(80),
         //set border radius more than 50% of height and width to make circle
@@ -174,8 +181,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
   }
 
   void openCardDetailsPage(int index) {
-
-    if(index == 0) {
+    if (index == 0) {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -183,8 +189,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );
-    }
-    else if(index == 1) {
+    } else if (index == 1) {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -192,27 +197,17 @@ class _MyHomePageState extends State<homePageWithWidgets> {
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );
-    }
-    else if(index == 2) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => surahListPage(),
-          settings: RouteSettings(name: 'Surah List Screen View'),
-        ),
-      );
-    }
-    else if(index == 3) {
+    } else if (index == 2) {
+      createKidsSurahContainer();
+    } else if (index == 3) {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => BayanVideosPage(),
-          settings:
-          RouteSettings(name: 'Video Lectures List Screen View'),
+          settings: RouteSettings(name: 'Video Lectures List Screen View'),
         ),
       );
-    }
-    else if(index == 4) {
+    } else if (index == 4) {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -220,8 +215,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );
-    }
-    else if(index == 5) {
+    } else if (index == 5) {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -229,6 +223,112 @@ class _MyHomePageState extends State<homePageWithWidgets> {
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );
+    }
+  }
+
+  void createKidsSurahContainer() {
+    List<String> surahs = [
+      "Surah Nas",
+      "Surah Falaq",
+      "Surah Ikhlas",
+      "Surah Qadar",
+      "More",
+    ];
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: HexColor("007055"),
+            title: Column(mainAxisSize: MainAxisSize.min, children: [
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "hjggjh jvhhh",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22.0,
+                        color: HexColor("#ffe200")),
+                  ),
+                ),
+                color: HexColor("05302D"),
+              )
+            ]),
+            content: setupAlertDialoadContainer(context, surahs),
+          );
+        });
+  }
+
+  Widget setupAlertDialoadContainer(context, List<String> surahPartsList) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          color: HexColor("05302D"),
+          height: 300.0, // Change as per your requirement
+          width: 300.0, // Change as per your requirement
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: surahPartsList.length,
+            itemBuilder: (BuildContext context, int index) {
+//              SurahInfo surah = createSurahInstance(surahPartsList[index]);
+
+              return Container(
+                  color: HexColor("05302D"),
+                  padding: const EdgeInsets.only(
+                      top: 8, bottom: 8, left: 8, right: 8),
+                  child: InkWell(
+                      onTap: () {
+                        openSurahFragment(index, context);
+                      },
+                      child: Card(
+                        color: HexColor("4F7B6E"),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Expanded(
+                                  child: Container(
+                                alignment: Alignment.center,
+//                                height: MediaQuery.of(context).size.height * 0.8,
+//                                padding: EdgeInsets.only(
+//                                    left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:50),
+//                                child: SingleChildScrollView(
+//                                    scrollDirection: Axis.vertical,
+//                                    physics: AlwaysScrollableScrollPhysics(),
+                                child: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 15, bottom: 5, right: 15, top: 5),
+                                    //apply padding to some sides only
+                                    child: Text(surahPartsList[index],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                            color: HexColor("#ffe200")))),
+                              ))
+                            ],
+                          ),
+                        ),
+                      )));
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  openSurahFragment(number, context) {
+    if (number <= 3) {
+      // termination case
+      Navigator.of(context).pop();
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => SurahScreen(number)));
+    } else {
+      Navigator.pop(context);
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => homePageWithWidgets()));
+      // function invokes itself
     }
   }
 }

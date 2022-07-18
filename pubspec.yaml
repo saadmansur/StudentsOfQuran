@@ -96,6 +96,7 @@ flutter:
     - lib/images/info.png
     - lib/images/kids.png
     - lib/images/tafseer.png
+    - lib/images/khuddamLogo.jpeg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
