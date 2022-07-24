@@ -11,16 +11,16 @@ class aboutUsPage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
   static const String routeName = '/homePage';
-   String hadeesText = "This app is made by _____________________ \n gfghfhfh jgjugjjfjf jjf jfyjfyjf \n";
-
+  String hadeesText =
+      " This app mainly consists of Video lectures of Tafseer Quran by Dr. Israr Ahmed. \n\n Powered by: Khuddam ul Quran NZ \n\n Developed by: Saad Mansur \n\n For feedback please email us at: saad_mansur@hotmail.com";
 }
+
 class _MyHomePageState extends State<aboutUsPage> {
-
-
   @override
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,7 +29,6 @@ class _MyHomePageState extends State<aboutUsPage> {
         title: Text("About Us"),
         backgroundColor: HexColor("007055"),
       ),
-
       body: Stack(
         children: <Widget>[
           Center(
@@ -40,25 +39,32 @@ class _MyHomePageState extends State<aboutUsPage> {
               fit: BoxFit.fill,
             ),
           ),
-          Row(
+          Column(
             children: [
+              Padding(padding: EdgeInsets.symmetric(vertical: 50)),
+              Image.asset("lib/images/khuddamLogo.jpeg",
+                  width: 250, height: 250, fit: BoxFit.fill),
               Expanded(
                 child: Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height ,
+                  height: MediaQuery.of(context).size.height,
                   padding: EdgeInsets.only(
-                      left: 0, top: MediaQuery.of(context).size.height * 0.2, right: 0, bottom:0),
+                      left: 0,
+                      top: 0,
+                      right: 0,
+                      bottom: 0),
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    physics: AlwaysScrollableScrollPhysics(),
-                    child: Padding (padding: EdgeInsets.only(left:15, bottom: 15, right: 15, top:15), //apply padding to some sides only
-                      child: Text(
-                          widget.hadeesText,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22.0,
-                              color: Colors.white)) )
-                  ),
+                      scrollDirection: Axis.vertical,
+                      physics: AlwaysScrollableScrollPhysics(),
+                      child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 15, bottom: 15, right: 15, top: 15),
+                          //apply padding to some sides only
+                          child: Text(widget.hadeesText,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22.0,
+                                  color: Colors.white)))),
                 ),
               ),
             ],
@@ -68,7 +74,6 @@ class _MyHomePageState extends State<aboutUsPage> {
     );
   }
 }
-
 
 /*Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore /Users/saadmansur/upload-keystore.jks -destkeystore /Users/saadmansur/upload-keystore.jks -deststoretype pkcs12".*/

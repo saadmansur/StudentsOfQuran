@@ -231,8 +231,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "Surah Nas",
       "Surah Falaq",
       "Surah Ikhlas",
-      "Surah Qadar",
-      "More",
+      "Surah Qadar"
     ];
     showDialog(
         context: context,
@@ -244,7 +243,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "hjggjh jvhhh",
+                    "Surah's",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22.0,
