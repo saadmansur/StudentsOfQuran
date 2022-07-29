@@ -51,6 +51,8 @@ dependencies:
   equatable: ^1.1.1
   flutter_cache_manager: ^3.0.0
   pedantic: ^1.8.0+1
+  audioplayers: ^0.20.1
+
 dev_dependencies:
   flutter_test:
       sdk: flutter

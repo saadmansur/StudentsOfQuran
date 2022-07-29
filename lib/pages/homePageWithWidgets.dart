@@ -10,6 +10,7 @@ import 'package:flutterapp/pages/BayanVideosPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
 import 'package:flutterapp/pages/aboutUsPage.dart';
+import 'package:flutterapp/pages/AudioPlayerPage.dart';
 import 'package:flutterapp/pages/kidsSurahScreen.dart';
 import 'dart:math';
 
@@ -193,7 +194,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => surahListPage(),
+          builder: (context) => AudioPlayerPage(),
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );

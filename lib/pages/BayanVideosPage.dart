@@ -105,7 +105,7 @@ class _MyHomePageState extends State<BayanVideosPage> {
         },
       ),
 
-      drawer: NavDrawer(),
+//      drawer: NavDrawer(),
     );
   }
 }
