@@ -7,14 +7,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audioplayers.dart';
-
+import '../model/SurahInfo.dart';
 class AudioPlayerPage extends StatefulWidget {
+
+  AudioPlayerPage({ required this.surah}) : super();
+  final SurahInfo surah;
+//  @override
+//  _MyHomePageState createState() => _MyHomePageState();
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<StatefulWidget> createState() {
+    return _MyHomePageState();
+  }
   static const String routeName = '/homePage';
-  String hadeesText =
-      " This app mainly consists of Video lectures of Tafseer Quran by Dr. Israr Ahmed. \n\n Powered by: Khuddam ul Quran NZ \n\n Developed by: Saad Mansur \n\n For feedback please email us at: saad_mansur@hotmail.com";
-}
+  }
 
 class _MyHomePageState extends State<AudioPlayerPage> {
   AudioPlayer player = AudioPlayer();
@@ -80,7 +85,7 @@ class _MyHomePageState extends State<AudioPlayerPage> {
                   )),
               const SizedBox(height: 20),
               Text(
-                "Surah Name",
+                widget.surah.arabicTitle,
                 style: TextStyle(
                     color: HexColor("#ffe200"),
                     fontWeight: FontWeight.bold,

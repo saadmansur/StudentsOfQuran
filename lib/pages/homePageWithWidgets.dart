@@ -8,11 +8,13 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterapp/pages/BayanVideosPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
+import 'package:flutterapp/pages/surahAudiosListPage.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
 import 'package:flutterapp/pages/aboutUsPage.dart';
 import 'package:flutterapp/pages/AudioPlayerPage.dart';
 import 'package:flutterapp/pages/kidsSurahScreen.dart';
 import 'dart:math';
+import 'package:flutterapp/model/SurahInfo.dart';
 
 class homePageWithWidgets extends StatefulWidget {
   @override
@@ -183,18 +185,18 @@ class _MyHomePageState extends State<homePageWithWidgets> {
 
   void openCardDetailsPage(int index) {
     if (index == 0) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => surahListPage(),
-          settings: RouteSettings(name: 'Surah List Screen View'),
-        ),
-      );
+      createTafseerLecturesContainer();
     } else if (index == 1) {
+      SurahInfo surahToPlay = SurahInfo(
+          surahNumber: "11",
+          arabicTitle: "Safaat",
+          ytLink:
+              "https://qurantafseeraudios.b-cdn.net/102%20%5BQuran%20Tafseer%20Urdu%5D%20AL-HAAQ_QAH.mp3",
+          englishTitle: "");
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => AudioPlayerPage(),
+          builder: (context) => AudioPlayerPage(surah: surahToPlay),
           settings: RouteSettings(name: 'Surah List Screen View'),
         ),
       );
@@ -225,6 +227,80 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         ),
       );
     }
+  }
+
+  void createTafseerLecturesContainer() {
+    String _selectedGender = 'male';
+    var _result;
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              backgroundColor: HexColor("007055"),
+              title: Column(mainAxisSize: MainAxisSize.min, children: [
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Quran Tafseer",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22.0,
+                          color: HexColor("#ffe200")),
+                    ),
+                  ),
+                  color: HexColor("05302D"),
+                )
+              ]),
+              content: StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      RadioListTile(
+                          title: const Text('Listen Audio Lectures',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0)),
+                          value: 4,
+                          groupValue: _result,
+                          onChanged: (value) {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => surahAudiosListPage(),
+                                  settings: RouteSettings(
+                                      name: 'Surah List Audio Screen View'),
+                                ),
+                              );
+                            });
+                          }),
+                      RadioListTile(
+                          title: const Text('Watch Video Lectures',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0)),
+                          value: 5.4,
+                          groupValue: _result,
+                          onChanged: (value) {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => surahListPage(),
+                                  settings: RouteSettings(
+                                      name: 'Surah List Video Screen View'),
+                                ),
+                              );
+                            });
+                          }),
+                      const SizedBox(height: 25),
+                    ],
+                  );
+                },
+              ));
+        });
   }
 
   void createKidsSurahContainer() {

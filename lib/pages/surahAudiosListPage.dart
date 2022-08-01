@@ -10,6 +10,7 @@ import '../services/SurahService.dart';
 import '../Utils.dart';
 import '../model/SurahInfo.dart';
 import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
+import 'package:flutterapp/pages/AudioPlayerPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,7 @@ import '../services/video_controller_service.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutterapp/model/video.dart';
 
-class surahListPage extends StatelessWidget {
+class surahAudiosListPage extends StatelessWidget {
   static const String routeName = '/surahListPage';
 
   @override
@@ -28,7 +29,7 @@ class surahListPage extends StatelessWidget {
 //    ]);
     return Scaffold(
         appBar: AppBar(
-          title: Text("Video Tafseer Lectures"),
+          title: Text("Audio Tafseer Lectures"),
           backgroundColor: HexColor("007055"),
         ),
         body: Stack(
@@ -88,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      ChewieDemo(surah: surahToPlay),
+                                      AudioPlayerPage(surah: surahToPlay),
                               settings: RouteSettings(name: 'Surah Player Screen: ' + surahToPlay.arabicTitle)));
                         } else {
                           List<String> surahPartsList =
@@ -220,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    ChewieDemo(surah: surah),
+                                    AudioPlayerPage(surah: surah),
                                 settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
 
 
