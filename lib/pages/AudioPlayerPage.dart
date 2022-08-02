@@ -32,8 +32,8 @@ class _MyHomePageState extends State<AudioPlayerPage> {
   void initState() {
     super.initState();
     final url =
-        'https://qurantafseeraudios.b-cdn.net/102%20%5BQuran%20Tafseer%20Urdu%5D%20AL-HAAQ_QAH.mp3';
-    player.setUrl(url);
+        widget.surah.ytLink;
+    player.play(url);
 
     player.onPlayerStateChanged.listen((state) {
       if (!mounted) return;
@@ -68,18 +68,25 @@ class _MyHomePageState extends State<AudioPlayerPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text("About Us"),
+          title: Text(widget.surah.englishTitle.length > 0?  widget.surah.englishTitle + "  -\t" + widget.surah.arabicTitle: widget.surah.arabicTitle),
           backgroundColor: HexColor("007055"),
         ),
-        body: Padding(
-            padding: const EdgeInsets.all(20),
-            child:
+        body: Stack(
+            children: <Widget>[
+              Center(
+                child: Image.asset(
+                  "lib/images/home_bg.jpg",
+                  width: size.width,
+                  height: size.height,
+                  fit: BoxFit.fill,
+                ),
+              ),
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.network(
-                    "https://videoLectutures.b-cdn.net/Zulhajj.jpg",
-                    width: double.infinity,
+                    "https://qurantafseeraudios.b-cdn.net/audio.jpg",
+                    width: size.width * 0.9,
                     height: 350,
                     fit: BoxFit.fill,
                   )),
@@ -121,13 +128,13 @@ class _MyHomePageState extends State<AudioPlayerPage> {
                     onPressed: () async {
                       if (!isPlaying) {
                         player.play(
-                            'https://qurantafseeraudios.b-cdn.net/102%20%5BQuran%20Tafseer%20Urdu%5D%20AL-HAAQ_QAH.mp3');
+                            widget.surah.ytLink);
                       } else {
                         player.pause();
                       }
                     },
                   ))
-            ]))
+            ])])
         /*body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

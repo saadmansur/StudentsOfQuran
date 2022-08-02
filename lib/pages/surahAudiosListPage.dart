@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
       child: FutureBuilder(
         future:
-            DefaultAssetBundle.of(context).loadString('assets/details_copy.json'),
+            DefaultAssetBundle.of(context).loadString('assets/audio_files.json'),
         builder: (context, snapshot) {
           // Decode the JSON
           var newData = json.decode(snapshot.data.toString());
