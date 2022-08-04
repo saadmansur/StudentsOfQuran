@@ -12,7 +12,7 @@ class aboutUsPage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
   static const String routeName = '/homePage';
   String hadeesText =
-      "This app mainly consists of Tafseer Quran lectures by Dr. Israr Ahmed.\n\nPowered by: Khuddam ul Quran NZ \n\nDeveloped by: Saad Mansur \n\nFor feedback please email us at: saad_mansur@hotmail.com";
+      "This app mainly consists of Tafseer Quran lectures by Dr. Israr Ahmed.\n\nPowered by: Khuddam ul Quran NZ \n\nDeveloped by: Saad Mansur \n\nFor feedback please email us at: khudaamulqurannz@gmail.com";
 }
 
 class _MyHomePageState extends State<aboutUsPage> {
@@ -41,9 +41,16 @@ class _MyHomePageState extends State<aboutUsPage> {
           ),
           Column(
             children: [
-              Padding(padding: EdgeInsets.symmetric(vertical: 50)),
-              Image.asset("lib/images/khuddamLogo.jpeg",
-                  width: 250, height: 250, fit: BoxFit.fill),
+              Padding(padding: EdgeInsets.symmetric(vertical: 40)),
+              /*Image.asset("lib/images/khuddamLogo.jpeg",
+                  width: 250, height: 250, fit: BoxFit.fill),*/
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset("lib/images/khuddamLogo.jpeg",
+                    width: size.width * 0.75,
+                    height: size.width * 0.75,
+                    fit: BoxFit.fill,
+                  )),
               Expanded(
                 child: Container(
                   alignment: Alignment.center,

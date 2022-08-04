@@ -59,6 +59,7 @@ class _MyHomePageState extends State<AudioPlayerPage> {
 
   @override
   void dispose() {
+    player.stop();
     player.dispose();
     super.dispose();
   }
@@ -90,15 +91,18 @@ class _MyHomePageState extends State<AudioPlayerPage> {
                     height: 350,
                     fit: BoxFit.fill,
                   )),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               Text(
                 widget.surah.arabicTitle,
                 style: TextStyle(
                     color: HexColor("#ffe200"),
                     fontWeight: FontWeight.bold,
-                    fontSize: 16.0),
+                    fontSize: 24.0),
               ),
               Slider(
+                activeColor: Colors.green, // The color to use for the portion of the slider track that is active.
+                inactiveColor: Colors.green[100], // The color for the inactive portion of the slider track.
+                thumbColor: Colors.white,
                 min: 0,
                 max: duration.inSeconds.toDouble(),
                 value: position.inSeconds.toDouble(),
@@ -109,22 +113,32 @@ class _MyHomePageState extends State<AudioPlayerPage> {
                   await player.resume();
                 },
               ),
+                  const SizedBox(height: 10),
               Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(formatTime(position)),
-                      Text(formatTime(duration - position))
+                      Text(formatTime(position),style: TextStyle(
+                          color: HexColor("#ffe200"),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0)),
+                      Text(formatTime(duration - position), style: TextStyle(
+                          color: HexColor("#ffe200"),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0))
                     ],
                   )),
+                  const SizedBox(height: 20),
               CircleAvatar(
-                  radius: 35,
+                  radius: 30,
+                  backgroundColor: Colors.white,
                   child: IconButton(
                     icon: Icon(
                       isPlaying ? Icons.pause : Icons.play_arrow,
+                      color: Colors.green,
                     ),
-                    iconSize: 50,
+                    iconSize: 45,
                     onPressed: () async {
                       if (!isPlaying) {
                         player.play(

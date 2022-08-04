@@ -27,7 +27,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+//    WidgetsBinding.instance!.addPostFrameCallback((_) async {
 /*      final remoteConfig = await RemoteConfig.instance;
 
       try {
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         widget.hadeesText = remoteConfig.getString("home_page_image");
 
       });*/
-    });
+//    });
   }
 
   @override
@@ -237,7 +237,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         builder: (BuildContext context) {
           return AlertDialog(
               backgroundColor: HexColor("007055"),
-              title: Column(mainAxisSize: MainAxisSize.min, children: [
+            /*  title: Column(mainAxisSize: MainAxisSize.min, children: [
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -251,7 +251,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                   ),
                   color: HexColor("05302D"),
                 )
-              ]),
+              ]),*/
               content: StatefulBuilder(
                 builder: (BuildContext context, StateSetter setState) {
                   return Column(
@@ -260,12 +260,14 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                       RadioListTile(
                           title: const Text('Listen Audio Lectures',
                               style: TextStyle(
+                                color: Colors.white,
                                   fontWeight: FontWeight.normal,
                                   fontSize: 18.0)),
                           value: 4,
                           groupValue: _result,
                           onChanged: (value) {
                             setState(() {
+                              Navigator.pop(context);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -279,12 +281,14 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                       RadioListTile(
                           title: const Text('Watch Video Lectures',
                               style: TextStyle(
+                                  color: Colors.white,
                                   fontWeight: FontWeight.normal,
                                   fontSize: 18.0)),
                           value: 5.4,
                           groupValue: _result,
                           onChanged: (value) {
                             setState(() {
+                              Navigator.pop(context);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -295,7 +299,6 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                               );
                             });
                           }),
-                      const SizedBox(height: 25),
                     ],
                   );
                 },
