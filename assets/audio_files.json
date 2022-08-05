@@ -80,7 +80,7 @@
     "surahParts": [
       "1 | Ayah 1 to Ayah 49 | https://qurantafseeraudios.b-cdn.net/28%20%5BQuran%20Tafseer%20Urdu%5D%20AL-AN_AAM%201-49.mp3| الأنعام",
       "2 | Ayah 50 to Ayah 90 | https://qurantafseeraudios.b-cdn.net/29%20%5BQuran%20Tafseer%20Urdu%5D%20AL-AN_AAM%2050-90.mp3| الأنعام",
-      "3 | Ayah 91 to Ayah 129 | issue | الأنعام",
+      "3 | Ayah 91 to Ayah 129 | https://qurantafseeraudios.b-cdn.net/30%20%5BQuran%20Tafseer%20Urdu%5D%20AL-AN_AAM%2091-129.mp3 | الأنعام",
       "4 | Ayah 130 to End | https://qurantafseeraudios.b-cdn.net/31%20%5BQuran%20Tafseer%20Urdu%5D%20AL-%20AN_AAM%20130-%20END.mp3 | الأنعام"
     ]
   },
@@ -112,7 +112,7 @@
     "name": "التوبة",
     "yt_link": "",
     "surahParts": [
-      "1 | Ayah 1 to Ayah 34 | issue | التوبة",
+      "1 | Ayah 1 to Ayah 34 | https://qurantafseeraudios.b-cdn.net/38%20%5BQuran%20Tafseer%20Urdu%5D%20AT-TAUBAH%201-35.mp3 | التوبة",
       "2 | Ayah 35 to 85 | https://qurantafseeraudios.b-cdn.net/39%20%5BQuran%20Tafseer%20Urdu%5D%20AT-TAUBAH%2035-85.mp3 | التوبة",
       "3 | 86 to End | https://qurantafseeraudios.b-cdn.net/40%20%5BQuran%20Tafseer%20Urdu%5D%20AT-TAUBAH%2086-END.mp3 | التوبة"
     ]
@@ -390,7 +390,7 @@
     "en_name": "Al-Fath",
     "surah": "48",
     "name": "الفتح",
-    "yt_link": "issue",
+    "yt_link": "https://qurantafseeraudios.b-cdn.net/81%20%5BQuran%20Tafseer%20Urdu%5D%20AL-FAT_H.mp3",
     "surahParts": []
   },
   {
@@ -565,7 +565,7 @@
     "en_name": "Al-Muzzammil",
     "surah": "73",
     "name": "المزمل",
-    "yt_link": "issue",
+    "yt_link": "https://qurantafseeraudios.b-cdn.net/106%20%5BQuran%20Tafseer%20Urdu%5D%20MUZZAMMIL.mp3",
     "surahParts": []
   },
   {
@@ -614,7 +614,7 @@
     "en_name": "Abasa",
     "surah": "80",
     "name": "عبس",
-    "yt_link": "issue",
+    "yt_link": "https://qurantafseeraudios.b-cdn.net/113%20%5BQuran%20Tafseer%20Urdu%5D%20ABBAS.mp3",
     "surahParts": []
   },
   {
@@ -838,7 +838,7 @@
     "en_name": "Al-Ikhlas",
     "surah": "112",
     "name": "الإخلاص",
-    "yt_link": "issue",
+    "yt_link": "https://qurantafseeraudios.b-cdn.net/145%20%5BQuran%20Tafseer%20Urdu%5D%20IKHLAS.mp3",
     "surahParts": []
   },
   {
