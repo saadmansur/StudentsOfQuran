@@ -59,52 +59,79 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         title: Text("Home"),
         backgroundColor: HexColor("007055"),
       ),
-      body: Stack(children: <Widget>[
+      body: Container(
+          padding: EdgeInsets.all(15.0),
+          alignment: Alignment.center,
+          color: HexColor("B9D187"),
+          child:Stack(children: <Widget>[
 //
 //      Center(
 //          child: Image.asset("lib/images/khuddamLogo.jpeg")),
-        Container(
-            padding: EdgeInsets.all(15.0),
-            alignment: Alignment.center,
-            color: HexColor("B9D187"),
-            child: GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 15.0,
-              mainAxisSpacing: 15.0,
-              shrinkWrap: true,
-              children: List.generate(
-                6,
-                (index) {
-                  return buildCard(index);
-                },
+        Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              /*Container(
+                  padding: EdgeInsets.all(15.0),
+                  alignment: Alignment.center,
+                  color: HexColor("B9D187"),
+                  child:*/ GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15.0,
+                    mainAxisSpacing: 15.0,
+                    shrinkWrap: true,
+                    children: List.generate(
+                      6,
+                      (index) {
+                        return buildCard(index);
+                      },
+                    ),
+//                  )
               ),
-            ))
-      ]),
-/*      body: Stack(
-        children: <Widget>[
-//          Center(
-//            child: Image.asset(
-//              "lib/images/home_bg.jpg",
-//              width: size.width,
-//              height: size.height,
-//              fit: BoxFit.fill,
-//            ),
-//          ),
-        widget.hadeesText.length == 0? Image.asset(
-              "lib/images/home_bg.jpg",
-          width: size.width,
-          height: size.height - AppBar().preferredSize.height,
-          fit: BoxFit.fill,
-        ):
-          Image.network(
-            widget.hadeesText,
-            width: size.width,
-            height: size.height - AppBar().preferredSize.height,
-            fit: BoxFit.fill,
-          ),
-        ],
-      ),*/
-//      drawer: NavDrawer(),
+              Card(
+                elevation: 5.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(80),
+                  //set border radius more than 50% of height and width to make circle
+                ),
+                child: InkWell(
+                    onTap: () {
+//                openCardDetailsPage(index);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(const Radius.circular(15.0)),
+                          image: DecorationImage(
+                              image: AssetImage("lib/images/home_bg.jpg"),
+                              fit: BoxFit.fill)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "lib/images/info.png",
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "test",
+                              style: TextStyle(
+                                  color: HexColor("#ffe200"),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              )
+            ]),
+      ])),
     );
   }
 
@@ -192,8 +219,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         context,
         MaterialPageRoute(
           builder: (context) => hadeesListPage(),
-          settings: RouteSettings(
-              name: 'Hadees List Screen View'),
+          settings: RouteSettings(name: 'Hadees List Screen View'),
         ),
       );
     } else if (index == 2) {
@@ -233,7 +259,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         builder: (BuildContext context) {
           return AlertDialog(
               backgroundColor: HexColor("007055"),
-            /*  title: Column(mainAxisSize: MainAxisSize.min, children: [
+              /*  title: Column(mainAxisSize: MainAxisSize.min, children: [
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -256,7 +282,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                       RadioListTile(
                           title: const Text('Listen Audio Lectures',
                               style: TextStyle(
-                                color: Colors.white,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.normal,
                                   fontSize: 18.0)),
                           value: 4,
