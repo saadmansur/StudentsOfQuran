@@ -75,12 +75,13 @@ class _MyHomePageState extends State<hadeesPage> {
           height: size.height - AppBar().preferredSize.height,
           fit: BoxFit.fill,
         ):
-          Image.network(
+        Center(
+          child: Image.network(
             widget.hadeesText,
             width: size.width,
-            height: size.height - AppBar().preferredSize.height,
-            fit: BoxFit.fill,
-          ),
+            height: (size.height - AppBar().preferredSize.height)  * 0.6,
+            fit: BoxFit.cover,
+          )),
         ],
       ),
     );

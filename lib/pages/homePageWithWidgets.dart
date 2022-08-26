@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterapp/pages/BayanVideosPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/surahAudiosListPage.dart';
+import 'package:flutterapp/pages/hadeesListPage.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
 import 'package:flutterapp/pages/aboutUsPage.dart';
 import 'package:flutterapp/pages/AudioPlayerPage.dart';
@@ -187,17 +188,12 @@ class _MyHomePageState extends State<homePageWithWidgets> {
     if (index == 0) {
       createTafseerLecturesContainer();
     } else if (index == 1) {
-      SurahInfo surahToPlay = SurahInfo(
-          surahNumber: "11",
-          arabicTitle: "Safaat",
-          ytLink:
-              "https://qurantafseeraudios.b-cdn.net/102%20%5BQuran%20Tafseer%20Urdu%5D%20AL-HAAQ_QAH.mp3",
-          englishTitle: "");
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => AudioPlayerPage(surah: surahToPlay),
-          settings: RouteSettings(name: 'Surah List Screen View'),
+          builder: (context) => hadeesListPage(),
+          settings: RouteSettings(
+              name: 'Hadees List Screen View'),
         ),
       );
     } else if (index == 2) {
@@ -215,7 +211,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         context,
         MaterialPageRoute(
           builder: (context) => hadeesPage(),
-          settings: RouteSettings(name: 'Surah List Screen View'),
+          settings: RouteSettings(name: 'Hadees Screen View'),
         ),
       );
     } else if (index == 5) {
@@ -223,7 +219,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         context,
         MaterialPageRoute(
           builder: (context) => aboutUsPage(),
-          settings: RouteSettings(name: 'Surah List Screen View'),
+          settings: RouteSettings(name: 'About Screen View'),
         ),
       );
     }
