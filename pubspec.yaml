@@ -98,6 +98,7 @@ flutter:
     - lib/images/info.png
     - lib/images/kids.png
     - lib/images/tafseer.png
+    - lib/images/nisaab.png
     - lib/images/khuddamLogo.jpeg
     - assets/audio_files.json
     - assets/hadees_details.json

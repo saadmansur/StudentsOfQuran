@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterapp/pages/BayanVideosPage.dart';
+import 'package:flutterapp/pages/MuntakhabNisaabPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/surahAudiosListPage.dart';
 import 'package:flutterapp/pages/hadeesListPage.dart';
@@ -60,43 +61,57 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         backgroundColor: HexColor("007055"),
       ),
       body: Container(
-          padding: EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(10.0),
           alignment: Alignment.center,
           color: HexColor("B9D187"),
           child:Stack(children: <Widget>[
-//
-//      Center(
-//          child: Image.asset("lib/images/khuddamLogo.jpeg")),
-        Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               /*Container(
                   padding: EdgeInsets.all(15.0),
                   alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                   color: HexColor("B9D187"),
                   child:*/ GridView.count(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 15.0,
-                    mainAxisSpacing: 15.0,
                     shrinkWrap: true,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0,
                     children: List.generate(
                       6,
                       (index) {
                         return buildCard(index);
                       },
                     ),
-//                  )
-              ),
+                  ),
+
+              Container(
+                  padding: EdgeInsets.only(
+                      left: 25, bottom: 0, right: 25, top: 0),
+                  alignment: Alignment.center,
+
+              child: /*Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [*/
               Card(
-                elevation: 5.0,
+                elevation: 2.0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80),
+                  borderRadius: BorderRadius.circular(20),
                   //set border radius more than 50% of height and width to make circle
                 ),
                 child: InkWell(
                     onTap: () {
-//                openCardDetailsPage(index);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => aboutUsPage(),
+                          settings: RouteSettings(name: 'About Screen View'),
+                        ),
+                      );
                     },
                     child: Container(
                       padding: const EdgeInsets.all(2),
@@ -116,10 +131,9 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                             fit: BoxFit.cover,
                           ),
                           Container(
-                            padding: EdgeInsets.only(left: 10.0, right: 10.0),
                             alignment: Alignment.center,
                             child: Text(
-                              "test",
+                              "About Us",
                               style: TextStyle(
                                   color: HexColor("#ffe200"),
                                   fontWeight: FontWeight.bold,
@@ -129,7 +143,8 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                         ],
                       ),
                     )),
-              )
+              )/*])*/
+      )
             ]),
       ])),
     );
@@ -139,18 +154,19 @@ class _MyHomePageState extends State<homePageWithWidgets> {
     var tilesText = [
       "Quran Tafseer Lectures by Dr. Israr",
       "Hadees Lectures by Dr. Israr",
-      "Kids Corner",
+      "Muntikhab Nisaab Lectures",
       "Motivational Islamic Lectures ",
-      "Hadees of the day",
-      "About Us"
+      "Kids Corner",
+      "Hadees of the day"
     ];
     var tilesIcons = [
       "tafseer.png",
       "hadees.png",
-      "kids.png",
+      "nisaab.png",
       "lectures.png",
+      "kids.png",
       "day.png",
-      "info.png"
+
     ];
     return Card(
       elevation: 5.0,
@@ -211,7 +227,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
     );
   }
 
-  void openCardDetailsPage(int index) {
+  void openCardDetailsPage1(int index) {
     if (index == 0) {
       createTafseerLecturesContainer();
     } else if (index == 1) {
@@ -246,6 +262,46 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         MaterialPageRoute(
           builder: (context) => aboutUsPage(),
           settings: RouteSettings(name: 'About Screen View'),
+        ),
+      );
+    }
+  }
+
+  void openCardDetailsPage(int index) {
+    if (index == 0) {
+      createTafseerLecturesContainer();
+    } else if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => hadeesListPage(),
+          settings: RouteSettings(name: 'Hadees List Screen View'),
+        ),
+      );
+    } else if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MuntakhabNisaabPage(),
+          settings: RouteSettings(name: 'Muntikhab Nisaab Videos List Screen View'),
+        ),
+      );
+    } else if (index == 3) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => BayanVideosPage(),
+          settings: RouteSettings(name: 'Video Lectures List Screen View'),
+        ),
+      );
+    } else if (index == 4) {
+      createKidsSurahContainer();
+    } else if (index == 5) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => hadeesPage(),
+          settings: RouteSettings(name: 'Hadees Screen View'),
         ),
       );
     }
