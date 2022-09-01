@@ -18,7 +18,7 @@ class MuntakhabNisaabPage extends StatefulWidget {
 class _MyHomePageState extends State<MuntakhabNisaabPage> {
 
   final CollectionReference _videos =
-  FirebaseFirestore.instance.collection('videos_list');
+  FirebaseFirestore.instance.collection('muntikhab_nisaab_videos');
 
   @override
   void initState() {
@@ -39,7 +39,11 @@ class _MyHomePageState extends State<MuntakhabNisaabPage> {
         stream: _videos.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
           if (streamSnapshot.hasData) {
-            return ListView.builder(
+            return Container(
+                padding: EdgeInsets.all(1.0),
+                alignment: Alignment.center,
+                color: HexColor("05302D"),
+                child:ListView.builder(
               itemCount: streamSnapshot.data!.docs.length,
               itemBuilder: (context, index) {
                 final DocumentSnapshot documentSnapshot =
@@ -96,7 +100,7 @@ class _MyHomePageState extends State<MuntakhabNisaabPage> {
                   ),
                 );
               },
-            );
+            ));
           }
 
           return const Center(
