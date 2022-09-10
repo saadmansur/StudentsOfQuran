@@ -12,7 +12,7 @@ class aboutUsPage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
   static const String routeName = '/homePage';
   String hadeesText =
-      "This app mainly consists of Tafseer Quran lectures by Dr. Israr Ahmed.\n\nPowered by: Khuddam ul Quran NZ \n\nDeveloped by: Saad Mansur \n\nFor feedback please email us at: khudaamulqurannz@gmail.com";
+      "This app mainly consists of Tafseer Quran lectures by Dr. Israr Ahmed.\n\nPowered by: Khuddam ul Quran NZ \n\nDeveloped by: Saad Mansur \n\nFor feedback please email us at: \nsaad_mansur@hotmail.com\nkhudaamulqurannz@gmail.com";
 }
 
 class _MyHomePageState extends State<aboutUsPage> {

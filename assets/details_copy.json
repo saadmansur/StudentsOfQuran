@@ -215,17 +215,14 @@
     "en_name": "Ta Ha",
     "surah": "20",
     "name": "طه",
-    "yt_link": "",
-    "surahParts": [
-      "1 | Ayah 1 to 46 | https://qurantafseervideos.b-cdn.net/20/Surah_Taha-1-46_1.mp4 | طه",
-      "2 | Ayah 47 to End | https://qurantafseervideos.b-cdn.net/20/Surah_Taha-47-End_1.mp4 | طه"
-    ]
+    "yt_link": "https://qurantafseervideos.b-cdn.net/20/Surah_Taha.mp4",
+    "surahParts": []
   },
   {
     "en_name": "Al-Anbiya",
     "surah": "21",
     "name": "الأنبياء",
-    "yt_link": "https://qurantafseervideos.b-cdn.net/21/Surah_Anbiya.mp4",
+    "yt_link": "https://qurantafseervideos.b-cdn.net/21/Surah_Anbiya_Final.mp4",
     "surahParts": []
   },
   {
@@ -266,7 +263,7 @@
     "en_name": "Ash-Shuara",
     "surah": "26",
     "name": "الشعراء",
-    "yt_link": "https://qurantafseervideos.b-cdn.net/26/Surah_Shuàra.mp4",
+    "yt_link": "https://qurantafseervideos.b-cdn.net/26/Surah_Shuàra_Final_1.mp4",
     "surahParts": []
   },
   {
@@ -800,7 +797,7 @@
     "en_name": "Al-Qariyah",
     "surah": "101",
     "name": "القارعة",
-    "yt_link": "https://qurantafseervideos.b-cdn.net/101/Surah_Qariya.mp4",
+    "yt_link": "https://qurantafseervideos.b-cdn.net/101/Surah_Qariya_Final.mp4",
     "surahParts": []
   },
   {
