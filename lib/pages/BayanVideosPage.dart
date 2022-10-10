@@ -36,7 +36,7 @@ class _MyHomePageState extends State<BayanVideosPage> {
         backgroundColor: HexColor("007055"),
       ),
       body: StreamBuilder(
-        stream: _videos.snapshots(),
+        stream: _videos.orderBy("order", descending: false).snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
           if (streamSnapshot.hasData) {
             return ListView.builder(
@@ -74,13 +74,20 @@ class _MyHomePageState extends State<BayanVideosPage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text(
-                                    documentSnapshot['video_name'],
-                                    //'Note Title',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22.0,
-                                        color: HexColor("#ffe200")),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width:size.width * 0.8, //width must be less than the width of Row(),
+                                        child:Text(
+                                          documentSnapshot['video_name'],
+                                          //'Note Title',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20.0,
+                                              color: HexColor("#ffe200")),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                   Text(
                                     documentSnapshot['video_author'],

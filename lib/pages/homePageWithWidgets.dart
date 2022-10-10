@@ -17,6 +17,7 @@ import 'package:flutterapp/pages/AudioPlayerPage.dart';
 import 'package:flutterapp/pages/kidsSurahScreen.dart';
 import 'dart:math';
 import 'package:flutterapp/model/SurahInfo.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
 
 class homePageWithWidgets extends StatefulWidget {
   @override
@@ -29,125 +30,54 @@ class _MyHomePageState extends State<homePageWithWidgets> {
   @override
   void initState() {
     super.initState();
-//    WidgetsBinding.instance!.addPostFrameCallback((_) async {
-/*      final remoteConfig = await RemoteConfig.instance;
-
-      try {
-        await remoteConfig.setConfigSettings(RemoteConfigSettings(
-          fetchTimeout: const Duration(hours: 4), //cache refresh time
-          minimumFetchInterval: Duration.zero,
-        ));
-        await remoteConfig.fetchAndActivate();
-
-      }
-      catch (exception) {
-        print('Unable to fetch remote config. Cached or default values will be '
-            'used');
-        print("exception===>$exception");
-      }
-      setState(() {
-        widget.hadeesText = remoteConfig.getString("home_page_image");
-
-      });*/
-//    });
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
-        backgroundColor: HexColor("007055"),
-      ),
-      body: Container(
-          padding: EdgeInsets.all(10.0),
-          alignment: Alignment.center,
-          color: HexColor("B9D187"),
-          child:Stack(children: <Widget>[
-Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              /*Container(
-                  padding: EdgeInsets.all(15.0),
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  color: HexColor("B9D187"),
-                  child:*/ GridView.count(
-                    crossAxisCount: 2,
-                    shrinkWrap: true,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10.0,
-                    children: List.generate(
-                      6,
-                      (index) {
-                        return buildCard(index);
-                      },
-                    ),
-                  ),
+        appBar: AppBar(
+            title: Center(child: Text("Home")),
+            backgroundColor: HexColor("007055")),
+        body: Column(children: [
+          Expanded(
+              child: Container(
+            padding: EdgeInsets.all(15.0),
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: HexColor("B9D187"),
+            child: GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              crossAxisSpacing: 10.0,
+              mainAxisSpacing: 10.0,
+              children: List.generate(
+                8,
+                (index) {
+                  return buildCard(index);
+                },
+              ),
+            ),
+          ))
+        ]));
+  }
 
-              Container(
-                  padding: EdgeInsets.only(
-                      left: 25, bottom: 0, right: 25, top: 0),
-                  alignment: Alignment.center,
-
-              child: /*Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [*/
-              Card(
-                elevation: 2.0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  //set border radius more than 50% of height and width to make circle
-                ),
-                child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => aboutUsPage(),
-                          settings: RouteSettings(name: 'About Screen View'),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                          borderRadius: new BorderRadius.all(const Radius.circular(15.0)),
-                          image: DecorationImage(
-                              image: AssetImage("lib/images/home_bg.jpg"),
-                              fit: BoxFit.fill)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "lib/images/info.png",
-                            width: 60,
-                            height: 60,
-                            fit: BoxFit.cover,
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "About Us",
-                              style: TextStyle(
-                                  color: HexColor("#ffe200"),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16.0),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-              )/*])*/
-      )
-            ]),
-      ])),
-    );
+  String getCountryISOCode() {
+    final WidgetsBinding? instance = WidgetsBinding.instance;
+    if (instance != null) {
+      final List<Locale> systemLocales = instance.window.locales;
+//      systemLocales.first.countryCode
+      Locale myLocale = Localizations.localeOf(context);
+      String? isoCountryCode = myLocale.languageCode;
+      if (isoCountryCode != null) {
+        return isoCountryCode;
+      } else {
+        throw Exception("Unable to get Country ISO code");
+      }
+    } else {
+      throw Exception("Unable to get Country ISO code");
+    }
   }
 
   Card buildCard(int index) {
@@ -157,7 +87,9 @@ Column(
       "Muntikhab Nisaab Lectures",
       "Motivational Islamic Lectures ",
       "Kids Corner",
-      "Hadees of the day"
+      "Hadees of the day",
+      "Digital Quranic Dictionary",
+      "About Us"
     ];
     var tilesIcons = [
       "tafseer.png",
@@ -166,7 +98,8 @@ Column(
       "lectures.png",
       "kids.png",
       "day.png",
-
+      "dictionary.png",
+      "info.png"
     ];
     return Card(
       elevation: 5.0,
@@ -206,68 +139,13 @@ Column(
                         fontSize: 16.0),
                   ),
                 ),
-//            Center(
-//              child: Text(
-//                tilesText[index],
-//                style: TextStyle(
-//                    color: HexColor("#ffe200"),
-//                    fontWeight: FontWeight.bold,
-//                    fontSize: 16.0),
-//              ),
-//            ),
               ],
             ),
           )),
-//            Container(
-//              padding: EdgeInsets.all(5.0),
-//              alignment: Alignment.center,
-//              child: Text(supportingText),
-//            ),
-//          ],
     );
   }
 
-  void openCardDetailsPage1(int index) {
-    if (index == 0) {
-      createTafseerLecturesContainer();
-    } else if (index == 1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => hadeesListPage(),
-          settings: RouteSettings(name: 'Hadees List Screen View'),
-        ),
-      );
-    } else if (index == 2) {
-      createKidsSurahContainer();
-    } else if (index == 3) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => BayanVideosPage(),
-          settings: RouteSettings(name: 'Video Lectures List Screen View'),
-        ),
-      );
-    } else if (index == 4) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => hadeesPage(),
-          settings: RouteSettings(name: 'Hadees Screen View'),
-        ),
-      );
-    } else if (index == 5) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => aboutUsPage(),
-          settings: RouteSettings(name: 'About Screen View'),
-        ),
-      );
-    }
-  }
-
-  void openCardDetailsPage(int index) {
+  Future<void> openCardDetailsPage(int index) async {
     if (index == 0) {
       createTafseerLecturesContainer();
     } else if (index == 1) {
@@ -283,7 +161,8 @@ Column(
         context,
         MaterialPageRoute(
           builder: (context) => MuntakhabNisaabPage(),
-          settings: RouteSettings(name: 'Muntikhab Nisaab Videos List Screen View'),
+          settings:
+              RouteSettings(name: 'Muntikhab Nisaab Videos List Screen View'),
         ),
       );
     } else if (index == 3) {
@@ -304,6 +183,17 @@ Column(
           settings: RouteSettings(name: 'Hadees Screen View'),
         ),
       );
+    } else if (index == 7) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => aboutUsPage(),
+          settings: RouteSettings(name: 'About Screen View'),
+        ),
+      );
+    } else if (index == 6) {
+      await LaunchApp.openApp(
+          androidPackageName: 'com.digital.quranicdictionary', openStore: true);
     }
   }
 
@@ -315,21 +205,6 @@ Column(
         builder: (BuildContext context) {
           return AlertDialog(
               backgroundColor: HexColor("007055"),
-              /*  title: Column(mainAxisSize: MainAxisSize.min, children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Quran Tafseer",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22.0,
-                          color: HexColor("#ffe200")),
-                    ),
-                  ),
-                  color: HexColor("05302D"),
-                )
-              ]),*/
               content: StatefulBuilder(
                 builder: (BuildContext context, StateSetter setState) {
                   return Column(

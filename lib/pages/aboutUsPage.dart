@@ -47,8 +47,8 @@ class _MyHomePageState extends State<aboutUsPage> {
               ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset("lib/images/khuddamLogo.jpeg",
-                    width: size.width * 0.75,
-                    height: size.width * 0.75,
+                    width: size.height * 0.23,
+                    height: size.height * 0.23,
                     fit: BoxFit.fill,
                   )),
               Expanded(
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<aboutUsPage> {
                           //apply padding to some sides only
                           child: Text(widget.hadeesText,
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   fontSize: 22.0,
                                   color: Colors.white)))),
                 ),

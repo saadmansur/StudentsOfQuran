@@ -80,7 +80,7 @@ class _MyHomePageState extends State<hadeesPage> {
             widget.hadeesText,
             width: size.width,
             height: (size.height - AppBar().preferredSize.height)  * 0.6,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           )),
         ],
       ),
