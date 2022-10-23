@@ -12,7 +12,16 @@ class aboutUsPage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
   static const String routeName = '/homePage';
   String hadeesText =
-      "This app mainly consists of Tafseer Quran lectures by Dr. Israr Ahmed.\n\nPowered by: Khuddam ul Quran NZ \n\nDeveloped by: Saad Mansur \n\nFor feedback please email us at: \nsaad_mansur@hotmail.com\nkhudaamulqurannz@gmail.com";
+      "Biyan ul Quran (Tafseer of Quran Majeed), Muntakhib Nisab (Detailed commentary on selective Surah / Ayyah of Quran Majeed) and Arbaeen Nawawi (Commentary on 40 Ahadees) by Dr Israr Ahmed (RA) are precious and well-known sources of inspiration for all Muslims around the world. Alhamdulilah.\n\n" + "By Toufeeq of Allah SWT, we have made an effort to bring this treasure of Quran and Hadees to one platform with elimination of any dependency on Youtube. Alhamdulilah." +
+
+          "This application enables its users to access video as well as audio lectures of Quran Tafseer. Another unique feature of this application is the privilege to access Tafseer of individual Surah. Alhamdulilah.\n\n" +
+
+          "Motivational lectures, kid's corner, Digital Quranic Arabic dictionary are value adding features of this application.\n\n" +
+
+          "Please join our hands by using and sharing this application and become a part of Sadqah e Jariyah in-Shaa-Allah. May Allah SWT Accept our little efforts. Ameen. \n\n" +
+
+          "Saad Mansur (Principal Developer)\n\n" +
+          "Powered by Khuddam ul Quan NZ";
 }
 
 class _MyHomePageState extends State<aboutUsPage> {
@@ -57,7 +66,7 @@ class _MyHomePageState extends State<aboutUsPage> {
                   height: MediaQuery.of(context).size.height,
                   padding: EdgeInsets.only(
                       left: 0,
-                      top: 0,
+                      top: 15,
                       right: 0,
                       bottom: 0),
                   child: SingleChildScrollView(

@@ -51,20 +51,54 @@ class SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     // To make this screen full screen.
     // It will hide status bar and notch.
-    SystemChrome.setEnabledSystemUIOverlays([]);
-
+//    SystemChrome.setEnabledSystemUIOverlays([]);
+    Size size = MediaQuery.of(context).size;
     // full screen image for splash screen.
-    return Container(
-      color: Colors.white,
-      padding: const EdgeInsets.all(25),
-        child: Image.asset("lib/images/khuddamLogo.jpeg"));
+//    return Container(
+//      color: Colors.white,
+//      padding: const EdgeInsets.all(25),
+//        child: Image.asset("lib/images/khuddamLogo.jpeg"));
+    return Column(
+      children: [
+//      Padding(padding: EdgeInsets.symmetric(vertical: 40)),
+//      /*Image.asset("lib/images/khuddamLogo.jpeg",
+//                  width: 250, height: 250, fit: BoxFit.fill),*/
+        Container(
+            color: Colors.white,
+            alignment: Alignment.center,
+            width: size.width,
+            height: size.height * 0.88,
+            child:
+            Image.asset("lib/images/khuddamLogo.jpeg"
+            )),
+        Container(
+          color: Colors.white,
+          alignment: Alignment.center,
+          width: size.width,
+          height: MediaQuery.of(context).size.height * 0.12,
+          padding: EdgeInsets.only(
+              left: 5,
+              top: 0,
+              right: 5,
+              bottom: 0),
+          child:  Text("Designed & Developed by Saad Mansur as Sadaqah Jariyah",
+              style: TextStyle(
+                  backgroundColor: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12.0,
+                  decoration: TextDecoration.none,
+                  color: Colors.black)),
+        ),
+
+      ],
+    );
   }
 }
 
 class MyApp extends StatelessWidget {
   static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   static FirebaseAnalyticsObserver observer =
-      FirebaseAnalyticsObserver(analytics: analytics);
+  FirebaseAnalyticsObserver(analytics: analytics);
 
   // This widget is the root of your application.
   @override

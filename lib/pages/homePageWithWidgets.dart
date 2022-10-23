@@ -192,8 +192,23 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         ),
       );
     } else if (index == 6) {
+//      await LaunchApp.openApp(
+//          androidPackageName: 'com.digital.quranicdictionary', openStore: true);
+
+
       await LaunchApp.openApp(
-          androidPackageName: 'com.digital.quranicdictionary', openStore: true);
+        androidPackageName: 'com.digital.quranicdictionary',
+        iosUrlScheme: 'arabicdictionary://',
+        appStoreLink:
+        'https://apps.apple.com/sg/app/digital-quranic-dictionary/id1638033757',
+         openStore: true
+      );
+//      OpenStore.instance.open(
+//          appStoreId: 'id1638033757', // AppStore id of your app for iOS
+//          appStoreIdMacOS: '284815942', // AppStore id of your app for MacOS (appStoreId used as default)
+//          androidAppBundleId: 'com.google.android.googlequicksearchbox', // Android app bundle package name
+//          windowsProductId: '9NZTWSQNTD0S' // Microsoft store id for Widnows apps
+//      );
     }
   }
 
