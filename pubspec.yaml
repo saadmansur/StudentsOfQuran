@@ -104,6 +104,7 @@ flutter:
     - lib/images/khuddamLogo.jpeg
     - assets/audio_files.json
     - assets/hadees_details.json
+    - assets/muntakhib_nisaab.json
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

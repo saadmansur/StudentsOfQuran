@@ -67,7 +67,7 @@ class SplashPageState extends State<SplashPage> {
             color: Colors.white,
             alignment: Alignment.center,
             width: size.width,
-            height: size.height * 0.88,
+            height: size.height * 0.92,
             child:
             Image.asset("lib/images/khuddamLogo.jpeg"
             )),
@@ -75,13 +75,13 @@ class SplashPageState extends State<SplashPage> {
           color: Colors.white,
           alignment: Alignment.center,
           width: size.width,
-          height: MediaQuery.of(context).size.height * 0.12,
+          height: MediaQuery.of(context).size.height * 0.08,
           padding: EdgeInsets.only(
               left: 5,
               top: 0,
               right: 5,
               bottom: 0),
-          child:  Text("Designed & Developed by Saad Mansur as Sadaqah Jariyah",
+          child:  Text("Designed & Developed by Saad Mansur for Sadaqah Jariyah",
               style: TextStyle(
                   backgroundColor: Colors.white,
                   fontWeight: FontWeight.bold,

@@ -11,6 +11,7 @@ import 'package:flutterapp/pages/MuntakhabNisaabPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/surahAudiosListPage.dart';
 import 'package:flutterapp/pages/hadeesListPage.dart';
+import 'package:flutterapp/pages/MuntakhibNisaabLocal.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
 import 'package:flutterapp/pages/aboutUsPage.dart';
 import 'package:flutterapp/pages/AudioPlayerPage.dart';
@@ -160,7 +161,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => MuntakhabNisaabPage(),
+          builder: (context) => MuntakhibNisaabLocal(),
           settings:
               RouteSettings(name: 'Muntikhab Nisaab Videos List Screen View'),
         ),
