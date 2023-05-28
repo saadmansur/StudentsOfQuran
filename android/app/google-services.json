@@ -29,6 +29,13 @@
             {
               "client_id": "819296277500-rqmcc5q86q9omp49l86fu6os63u99b6m.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "819296277500-k574i0qnr0fgs7v4di6hjdor072cfe6v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.innovative.solutions.qurantafseer"
+              }
             }
           ]
         }
