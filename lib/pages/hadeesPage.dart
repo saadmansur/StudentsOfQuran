@@ -21,9 +21,9 @@ class _MyHomePageState extends State<hadeesPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
-      final remoteConfig = await RemoteConfig.instance;
-
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final remoteConfig = await FirebaseRemoteConfig.instance;
+      //
       try {
         await remoteConfig.setConfigSettings(RemoteConfigSettings(
           fetchTimeout: const Duration(hours: 4), //cache refresh time

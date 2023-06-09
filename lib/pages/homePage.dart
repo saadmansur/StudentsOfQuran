@@ -21,28 +21,9 @@ class _MyHomePageState extends State<homePage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance!.addPostFrameCallback((_) async {
-      final remoteConfig = await RemoteConfig.instance;
 
-      try {
-        await remoteConfig.setConfigSettings(RemoteConfigSettings(
-          fetchTimeout: const Duration(hours: 4), //cache refresh time
-          minimumFetchInterval: Duration.zero,
-        ));
-        await remoteConfig.fetchAndActivate();
-
-//      } on PlatformException catch (exception) {
-//// Fetch exception.
-//        print(exception);
-//        print("exception===>" + remoteConfig.getString("hadees_text"));
-//        widget.hadeesText = remoteConfig.getString("hadees_text");
-      }
-      catch (exception) {
-        print('Unable to fetch remote config. Cached or default values will be '
-            'used');
-        print("exception===>$exception");
-      }
       setState(() {
-        widget.hadeesText = remoteConfig.getString("hadees_text");
+        // widget.hadeesText = remoteConfig.getString("hadees_text");
 
       });
     });

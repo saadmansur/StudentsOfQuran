@@ -1,4 +1,4 @@
-// @dart=2.9
+
 import 'package:flutter/material.dart';
 import '../pages/homePage.dart';
 import '../pages/homePageWithWidgets.dart';
@@ -37,25 +37,26 @@ Future<void> main() async {
   print('User granted permission: ${settings.authorizationStatus}');
 
 // Lisitnening to the background messages
-
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   WidgetsFlutterBinding.ensureInitialized();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    print('Got a message whilst in the foreground!');
-    print('Message data: ${message.data}');
-
-    if (message.notification != null) {
-      print('Message also contained a notification: ${message.notification}');
-    }
+// Listneing to the foreground messages
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseMessaging.onMessage.listen((RemoteMessage event) {
+    print("message recieved");
+    print(event.notification!.body);
   });
-  runApp(MyApp());
+  FirebaseMessaging.onMessageOpenedApp.listen((message) {
+    print('Message clicked!');
+  });
 
+  runApp(MyApp());
 }
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  print("Handling a background message: ${message.messageId}");
 }
+
 class SplashPage extends StatefulWidget {
   @override
   SplashPageState createState() => SplashPageState();
@@ -63,7 +64,8 @@ class SplashPage extends StatefulWidget {
 
 class SplashPageState extends State<SplashPage> {
 // THIS FUNCTION WILL NAVIGATE FROM SPLASH SCREEN TO HOME SCREEN.    // USING NAVIGATOR CLASS.
-  FirebaseMessaging messaging;
+//   FirebaseMessaging messaging;
+
   void navigationToNextPage() {
     Navigator.pushReplacementNamed(context, '/homePageWithWidgets');
   }
@@ -72,43 +74,43 @@ class SplashPageState extends State<SplashPage> {
     var _duration = new Duration(seconds: 3);
     return Timer(_duration, navigationToNextPage);
   }
+
 // It is assumed that all messages contain a data field with the key 'type'
-  Future<void> setupInteractedMessage() async {
-    // Get any messages which caused the application to open from
-    // a terminated state.
-    RemoteMessage initialMessage =
-    await FirebaseMessaging.instance.getInitialMessage();
-
-    // If the message also contains a data property with a "type" of "chat",
-    // navigate to a chat screen
-    if (initialMessage != null) {
-      _handleMessage(initialMessage);
-    }
-    FirebaseMessaging.onMessage.listen((RemoteMessage event) {
-      print("message recieved");
-      print(event.notification.body);
-    });
-    // Also handle any interaction when the app is in the background via a
-    // Stream listener
-    FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
-  }
-
-  void _handleMessage(RemoteMessage message) {
-    navigationToNextPage();
-    if (message.data['type'] == 'chat') {
-      // Navigator.pushNamed(context, '/chat',
-      //   arguments: ChatArguments(message),
-      // );
-    }
-  }
+//   Future<void> setupInteractedMessage() async {
+//     // Get any messages which caused the application to open from
+//     // a terminated state.
+//     RemoteMessage initialMessage =
+//     await FirebaseMessaging.instance.getInitialMessage();
+//
+//     // If the message also contains a data property with a "type" of "chat",
+//     // navigate to a chat screen
+//     if (initialMessage != null) {
+//       _handleMessage(initialMessage);
+//     }
+//     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
+//       print("message recieved");
+//       print(event.notification.body);
+//     });
+//     // Also handle any interaction when the app is in the background via a
+//     // Stream listener
+//     FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
+//   }
+//
+//   void _handleMessage(RemoteMessage message) {
+//     navigationToNextPage();
+//     if (message.data['type'] == 'chat') {
+//       // Navigator.pushNamed(context, '/chat',
+//       //   arguments: ChatArguments(message),
+//       // );
+//     }
+//   }
   @override
   void initState() {
     super.initState();
-    messaging = FirebaseMessaging.instance;
-    messaging.getToken().then((value){
-      print('Message is here: ${value}');
-    });
-    setupInteractedMessage();
+    // FirebaseMessaging messaging = FirebaseMessaging.instance;
+    // messaging.getToken().then((value) {
+    //   print('Message is here: ${value}');
+    // });
     startSplashScreenTimer();
   }
 
