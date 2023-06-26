@@ -18,6 +18,7 @@ import 'package:flutterapp/pages/AudioPlayerPage.dart';
 import 'package:flutterapp/pages/kidsSurahScreen.dart';
 import 'dart:math';
 import 'package:flutterapp/model/SurahInfo.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 
 class homePageWithWidgets extends StatefulWidget {
@@ -39,7 +40,18 @@ class _MyHomePageState extends State<homePageWithWidgets> {
     return Scaffold(
         appBar: AppBar(
             title: Center(child: Text("Home")),
-            backgroundColor: HexColor("007055")),
+            backgroundColor: HexColor("007055"),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.share,
+                ),
+                onPressed: () {
+                  print("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
+
+                  Share.share("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
+                }),
+          ]),
         body: Column(children: [
           Expanded(
               child: Container(
