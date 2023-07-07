@@ -1,0 +1,159 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutterapp/navigation_drawer/NavDrawer.dart';
+import 'package:flutterapp/pages/player_screen.dart';
+import 'package:flutterapp/pages/VideoPageCached.dart';
+import 'package:flutter/services.dart';
+import '../model/SurahReciteInfo.dart';
+import '../routes/drawer_routes.dart';
+import '../services/SurahService.dart';
+import '../Utils.dart';
+import '../model/SurahInfo.dart';
+import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../services/video_controller_service.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutterapp/model/video.dart';
+
+class surahWithTranslationPage extends StatelessWidget {
+  static const String routeName = '/surahWithTranslationPage';
+  surahWithTranslationPage({required this.surah}) : super();
+  final SurahReciteInfo surah;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+//     SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+//      DeviceOrientation.portraitUp,
+//    ]);
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(surah.arabicTitle),
+          backgroundColor: HexColor("007055"),
+        ),
+        body: Stack(
+          children: <Widget>[
+            Center(
+              child: Image.asset(
+                "lib/images/home_bg.jpg",
+                width: size.width,
+                height: size.height,
+                fit: BoxFit.fill,
+              ),
+            ),
+            Center(child: MyHomePage(surah:surah)),
+          ],
+        ));
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  MyHomePage({required this.surah}) : super();
+final SurahReciteInfo surah;
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  late List data;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: FutureBuilder(
+        future:
+            DefaultAssetBundle.of(context).loadString('assets/verses/' + widget.surah.surahNumber.toString() + '.json'),
+        builder: (context, snapshot) {
+          // Decode the JSON
+          var newData = json.decode(snapshot.data.toString());
+
+          return ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+
+              return Container(
+                  color: HexColor("05302D"),
+                  padding: const EdgeInsets.only(
+                      top: 0, bottom: 0, left: 4, right: 4),
+                  child: InkWell(
+                      child: Card(
+                        color: HexColor("FFFFFF"),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            textDirection: TextDirection.ltr,
+                            children: <Widget>[
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 0, bottom: 0, right: 0, top: 10),
+                                  //apply padding to some sides only
+                                  child: Text( newData[index]['text'] + " [" + newData[index]['id'].toString() + "]" ,
+                                    //'Note Title',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 48.0,
+                                        fontFamily: 'naskhregular',
+                                        color: HexColor("#000000")),
+                                  )),
+                              newData[index]['translation'].length > 0 && this.widget.surah.reciteMode == 1?  Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 0, bottom: 0, right: 0, top: 10),
+                                  //apply padding to some sides only
+                                  child:Text(
+                                    newData[index]['translation'] + " [" + newData[index]['id'].toString() + "]" ,
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(fontWeight: FontWeight.bold,
+                                        fontSize: 30.0,
+                                        color: Colors.green),
+                                  )): Flexible(child: Text("",
+                                //'Note Title',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 1.0,
+                                    color: HexColor("#ffe200")),
+                              )),
+                            ],
+                          ),
+                        ),
+                      )));
+            },
+            itemCount: newData == null ? 0 : newData.length,
+          );
+        },
+      ),
+    ));
+  }
+
+  SurahInfo createSurahInstance(String surahPartText) {
+    List<String> parts = surahPartText.split('|');
+    return SurahInfo(
+        surahNumber: parts[0],
+        arabicTitle: parts[1],
+        ytLink: parts[2].trim(),
+        englishTitle: parts[3]);
+  }
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({ required this.surah}) : super();
+  final SurahInfo surah;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Video Player',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      home: ChewieDemo(surah: this.surah)/*VideoPageCached(
+        video: Video(
+          title: 'Fluttering Butterfly',
+          url: 'https://drive.google.com/uc?export=download&id=117vlngjbaBkZQoe9D8DIQ40-5xUAMIpi',
+        ),*/
+      );
+  }
+}

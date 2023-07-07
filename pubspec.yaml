@@ -108,10 +108,33 @@ flutter:
     - assets/audio_files.json
     - assets/hadees_details.json
     - assets/muntakhib_nisaab.json
+    - assets/surah_list_reading.json
+    - assets/verses/1.json
+    - assets/verses/2.json
+    - assets/verses/3.json
+    - assets/verses/4.json
+    - assets/verses/5.json
+    - assets/verses/6.json
+    - assets/verses/7.json
+    - assets/verses/8.json
+    - assets/verses/9.json
+    - assets/verses/10.json
+    - assets/verses/11.json
+    - assets/verses/12.json
+    - assets/verses/13.json
+    - assets/verses/14.json
+    - assets/verses/15.json
+    - assets/verses/16.json
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  fonts:
+    - family: naskhregular
+      fonts:
+        - asset: assets/PDMS_Saleem_QuranFont.ttf
+          style: normal
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

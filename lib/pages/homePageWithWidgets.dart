@@ -10,6 +10,7 @@ import 'package:flutterapp/pages/BayanVideosPage.dart';
 import 'package:flutterapp/pages/MuntakhabNisaabPage.dart';
 import 'package:flutterapp/pages/surahListPage.dart';
 import 'package:flutterapp/pages/surahAudiosListPage.dart';
+import 'package:flutterapp/pages/surahRecitingListPage.dart';
 import 'package:flutterapp/pages/hadeesListPage.dart';
 import 'package:flutterapp/pages/MuntakhibNisaabLocal.dart';
 import 'package:flutterapp/pages/hadeesPage.dart';
@@ -187,7 +188,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         ),
       );
     } else if (index == 4) {
-      createKidsSurahContainer();
+     createQuranReadContainer();
     } else if (index == 5) {
       Navigator.push(
         context,
@@ -276,6 +277,66 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                                   builder: (context) => surahListPage(),
                                   settings: RouteSettings(
                                       name: 'Surah List Video Screen View'),
+                                ),
+                              );
+                            });
+                          }),
+                    ],
+                  );
+                },
+              ));
+        });
+  }
+  void createQuranReadContainer() {
+    var _result;
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              backgroundColor: HexColor("007055"),
+              content: StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      RadioListTile(
+                          title: const Text('Read Quran',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0)),
+                          value: 4,
+                          groupValue: _result,
+                          onChanged: (value) {
+                            setState(() {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => surahRecitingListPage(reciteMode: 0),
+                                  settings: RouteSettings(
+                                      name: 'Surah List Read Quran Screen View'),
+                                ),
+                              );
+                            });
+                          }),
+                      RadioListTile(
+                          title: const Text('Read Quran with Urdu Translation',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0)),
+                          value: 5.4,
+                          groupValue: _result,
+                          onChanged: (value) {
+                            setState(() {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => surahRecitingListPage(reciteMode: 1),
+                                  settings: RouteSettings(
+                                      name: 'Read Quran with Urdu Translation Screen View'),
                                 ),
                               );
                             });
