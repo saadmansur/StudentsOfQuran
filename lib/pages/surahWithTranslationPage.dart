@@ -30,7 +30,11 @@ class surahWithTranslationPage extends StatelessWidget {
 //    ]);
     return Scaffold(
         appBar: AppBar(
-          title: Text(surah.arabicTitle),
+          title: Text(surah.arabicTitle,style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 30.0,
+              fontFamily: 'naskhregular',
+              color: HexColor("#FFFFFF"))),
           backgroundColor: HexColor("007055"),
         ),
         body: Stack(
@@ -75,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
               return Container(
                   color: HexColor("05302D"),
-                  padding: const EdgeInsets.only(
-                      top: 0, bottom: 0, left: 4, right: 4),
+                  // padding: const EdgeInsets.only(
+                  //     top: 0, bottom: 0, left: 4, right: 4),
                   child: InkWell(
                       child: Card(
                         color: HexColor("FFFFFF"),
@@ -107,7 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     newData[index]['translation'] + " [" + newData[index]['id'].toString() + "]" ,
                                     textAlign: TextAlign.justify,
                                     style: TextStyle(fontWeight: FontWeight.bold,
-                                        fontSize: 30.0,
+                                        fontSize: 34.0,
+                                        fontFamily: 'urdu',
                                         color: Colors.green),
                                   )): Flexible(child: Text("",
                                 //'Note Title',

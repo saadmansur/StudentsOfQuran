@@ -2,22 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/model/SurahReciteInfo.dart';
-import 'package:flutterapp/navigation_drawer/NavDrawer.dart';
-import 'package:flutterapp/pages/player_screen.dart';
-import 'package:flutterapp/pages/VideoPageCached.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/pages/surahWithTranslationPage.dart';
-import '../routes/drawer_routes.dart';
-import '../services/SurahService.dart';
 import '../Utils.dart';
 import '../model/SurahInfo.dart';
 import 'package:flutterapp/pages/ChewiePlayerScreen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../services/video_controller_service.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:flutterapp/model/video.dart';
 
 class surahRecitingListPage extends StatelessWidget {
   static const String routeName = '/surahListPage';
@@ -33,7 +22,7 @@ class surahRecitingListPage extends StatelessWidget {
 //    ]);
     return Scaffold(
         appBar: AppBar(
-          title: Text("Video Tafseer Lectures"),
+          title: Text("Surah List for Recitation"),
           backgroundColor: HexColor("007055"),
         ),
         body: Stack(
@@ -91,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => surahWithTranslationPage(surah:SurahReciteInfo(surahNumber:index+1, arabicTitle: "سورة " + newData[index]['name'], ytLink: "", englishTitle: "", reciteMode: this.widget.reciteMode)),
-                            settings: RouteSettings(name: 'surah Reciting With translation View'),
+                            settings: RouteSettings(name: 'surah Reciting With translation View ' + "سورة " + newData[index]['name']),
                           ),
                         );
                         /*} else {

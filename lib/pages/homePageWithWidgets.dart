@@ -100,7 +100,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "Hadees Lectures by Dr. Israr",
       "Muntikhab Nisaab Lectures",
       "Motivational Islamic Lectures ",
-      "Kids Corner",
+      "Recite Quran Majeed",
       "Hadees of the day",
       "Digital Quranic Dictionary",
       "About Us"
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "hadees.png",
       "nisaab.png",
       "lectures.png",
-      "kids.png",
+      "quran_recite.png",
       "day.png",
       "dictionary.png",
       "info.png"

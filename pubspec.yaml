@@ -101,6 +101,7 @@ flutter:
     - lib/images/lectures.png
     - lib/images/info.png
     - lib/images/kids.png
+    - lib/images/quran_recite.png
     - lib/images/tafseer.png
     - lib/images/nisaab.png
     - lib/images/dictionary.png
@@ -189,6 +190,40 @@ flutter:
     - assets/verses/78.json
     - assets/verses/79.json
     - assets/verses/80.json
+    - assets/verses/81.json
+    - assets/verses/82.json
+    - assets/verses/83.json
+    - assets/verses/84.json
+    - assets/verses/85.json
+    - assets/verses/86.json
+    - assets/verses/87.json
+    - assets/verses/88.json
+    - assets/verses/89.json
+    - assets/verses/90.json
+    - assets/verses/91.json
+    - assets/verses/92.json
+    - assets/verses/93.json
+    - assets/verses/94.json
+    - assets/verses/95.json
+    - assets/verses/96.json
+    - assets/verses/97.json
+    - assets/verses/98.json
+    - assets/verses/99.json
+    - assets/verses/100.json
+    - assets/verses/101.json
+    - assets/verses/102.json
+    - assets/verses/103.json
+    - assets/verses/104.json
+    - assets/verses/105.json
+    - assets/verses/106.json
+    - assets/verses/107.json
+    - assets/verses/108.json
+    - assets/verses/109.json
+    - assets/verses/110.json
+    - assets/verses/111.json
+    - assets/verses/112.json
+    - assets/verses/113.json
+    - assets/verses/114.json
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -196,6 +231,10 @@ flutter:
 
   fonts:
     - family: naskhregular
+      fonts:
+        - asset: assets/AlMajeed.ttf
+          style: normal
+    - family: urdu
       fonts:
         - asset: assets/PDMS_Saleem_QuranFont.ttf
           style: normal
