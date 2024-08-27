@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MuntakhabNisaabPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => ChewieDemo(surah: surahToPlay),
-                                settings: RouteSettings(name: 'Muntakhib Nisaab Video Player Screen:' + surahToPlay.arabicTitle),
+                                settings: RouteSettings(name: 'Muntakhib Nisaab Video Player Screen' + surahToPlay.arabicTitle),
                               ),
                             );
                           },

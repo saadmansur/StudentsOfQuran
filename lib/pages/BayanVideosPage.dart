@@ -59,7 +59,7 @@ class _MyHomePageState extends State<BayanVideosPage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => ChewieDemo(surah: surahToPlay),
-                            settings: RouteSettings(name: 'Video Lecturees Player Screen:' + surahToPlay.arabicTitle),
+                            settings: RouteSettings(name: 'Video Lecturees Player Screen' + surahToPlay.arabicTitle),
                           ),
                         );
                       },

@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             MaterialPageRoute(
                                 builder: (context) =>
                                     ChewieDemo(surah: surah),
-                                settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
+                                settings: RouteSettings(name: 'Surah Player Screen ' + surah.arabicTitle)));
 
 
 

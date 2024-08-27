@@ -43,15 +43,15 @@ class _MyHomePageState extends State<homePageWithWidgets> {
             title: Center(child: Text("Home")),
             backgroundColor: HexColor("007055"),
           actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.share,
-                ),
-                onPressed: () {
-                  print("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
-
-                  Share.share("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
-                }),
+            // IconButton(
+            //     icon: Icon(
+            //       Icons.share,
+            //     ),
+            //     onPressed: () {
+            //       print("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
+            //
+            //       Share.share("It has all the Quran tafseer audio/video and hadees lectures by Dr. Israr Ahmed.\nFor iPhones users:\nhttps://apps.apple.com/nz/app/quran-tafseer/id6443613667\nFor Android users:\nhttps://play.google.com/store/apps/details?id=com.innovative.solutions.qurantafseer\nShare it with others as Sadqah Jariya.");
+            //     }),
           ]),
         body: Column(children: [
           Expanded(
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "Motivational Islamic Lectures ",
       "Recite Quran Majeed",
       "Hadees of the day",
-      "Digital Quranic Dictionary",
+      "Kids Corner",
       "About Us"
     ];
     var tilesIcons = [
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
       "lectures.png",
       "quran_recite.png",
       "day.png",
-      "dictionary.png",
+      "kids.png",
       "info.png"
     ];
     return Card(
@@ -206,23 +206,14 @@ class _MyHomePageState extends State<homePageWithWidgets> {
         ),
       );
     } else if (index == 6) {
-//      await LaunchApp.openApp(
-//          androidPackageName: 'com.digital.quranicdictionary', openStore: true);
-
-
-      await LaunchApp.openApp(
+      createKidsSurahContainer();
+/*      await LaunchApp.openApp(
         androidPackageName: 'com.digital.quranicdictionary',
         iosUrlScheme: 'arabicdictionary://',
         appStoreLink:
         'https://apps.apple.com/sg/app/digital-quranic-dictionary/id1638033757',
          openStore: true
-      );
-//      OpenStore.instance.open(
-//          appStoreId: 'id1638033757', // AppStore id of your app for iOS
-//          appStoreIdMacOS: '284815942', // AppStore id of your app for MacOS (appStoreId used as default)
-//          androidAppBundleId: 'com.google.android.googlequicksearchbox', // Android app bundle package name
-//          windowsProductId: '9NZTWSQNTD0S' // Microsoft store id for Widnows apps
-//      );
+      );*/
     }
   }
 
@@ -321,7 +312,7 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                             });
                           }),
                       RadioListTile(
-                          title: const Text('Read Quran with Urdu Translation',
+                          title: const Text('Read Quran with English Translation',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.normal,
@@ -335,6 +326,27 @@ class _MyHomePageState extends State<homePageWithWidgets> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => surahRecitingListPage(reciteMode: 1),
+                                  settings: RouteSettings(
+                                      name: 'Read Quran with English Translation Screen View'),
+                                ),
+                              );
+                            });
+                          }),
+                      RadioListTile(
+                          title: const Text('Read Quran with Urdu Translation',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0)),
+                          value: 5.4,
+                          groupValue: _result,
+                          onChanged: (value) {
+                            setState(() {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => surahRecitingListPage(reciteMode: 2),
                                   settings: RouteSettings(
                                       name: 'Read Quran with Urdu Translation Screen View'),
                                 ),

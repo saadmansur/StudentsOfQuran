@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       AudioPlayerPage(surah: surahToPlay),
-                              settings: RouteSettings(name: 'Surah Player Screen: ' + surahToPlay.arabicTitle)));
+                              settings: RouteSettings(name: "SurahA Player Screen " + surahToPlay.arabicTitle)));
                         } else {
                           List<String> surahPartsList =
                               newData[index]['surahParts'].cast<String>();
@@ -222,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             MaterialPageRoute(
                                 builder: (context) =>
                                     AudioPlayerPage(surah: surah),
-                                settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
+                                settings: RouteSettings(name: "SurahA Player Screen " + surah.arabicTitle)));
 
 
 

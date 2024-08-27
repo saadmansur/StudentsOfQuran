@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
       child: FutureBuilder(
         future:
-            DefaultAssetBundle.of(context).loadString('assets/verses/' + widget.surah.surahNumber.toString() + '.json'),
+        this.widget.surah.reciteMode == 0 || widget.surah.reciteMode == 1? DefaultAssetBundle.of(context).loadString('assets/verses_en/' + widget.surah.surahNumber.toString() + '.json'): DefaultAssetBundle.of(context).loadString('assets/verses/' + widget.surah.surahNumber.toString() + '.json'),
         builder: (context, snapshot) {
           // Decode the JSON
           var newData = json.decode(snapshot.data.toString());
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         fontFamily: 'naskhregular',
                                         color: HexColor("#000000")),
                                   )),
-                              newData[index]['translation'].length > 0 && this.widget.surah.reciteMode == 1?  Padding(
+                              newData[index]['translation'].length > 0 && (this.widget.surah.reciteMode == 1 || this.widget.surah.reciteMode == 2)?  Padding(
                                   padding: EdgeInsets.only(
                                       left: 0, bottom: 0, right: 0, top: 10),
                                   //apply padding to some sides only

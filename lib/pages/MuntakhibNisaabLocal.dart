@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       ChewieDemo(surah: surahToPlay),
-                              settings: RouteSettings(name: 'Muntakhib Nisaab Lecture: ' + surahToPlay.arabicTitle)));
+                              settings: RouteSettings(name: 'Muntakhib Nisaab Lecture ' + surahToPlay.arabicTitle)));
                         } else {
                           List<String> surahPartsList =
                               newData[index]['surahParts'].cast<String>();
@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             MaterialPageRoute(
                                 builder: (context) =>
                                     ChewieDemo(surah: surah),
-                                settings: RouteSettings(name: 'Surah Player Screen: ' + surah.arabicTitle)));
+                                settings: RouteSettings(name: 'MNisab Player Screen ' + surah.arabicTitle)));
 
 
 

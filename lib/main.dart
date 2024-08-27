@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../pages/homePage.dart';
 import '../pages/homePageWithWidgets.dart';
-import '../pages/player_screen.dart';
 import '../pages/surahListPage.dart';
 import '../routes/drawer_routes.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +15,6 @@ import 'dart:async';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-//SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_){
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -75,35 +72,6 @@ class SplashPageState extends State<SplashPage> {
     return Timer(_duration, navigationToNextPage);
   }
 
-// It is assumed that all messages contain a data field with the key 'type'
-//   Future<void> setupInteractedMessage() async {
-//     // Get any messages which caused the application to open from
-//     // a terminated state.
-//     RemoteMessage initialMessage =
-//     await FirebaseMessaging.instance.getInitialMessage();
-//
-//     // If the message also contains a data property with a "type" of "chat",
-//     // navigate to a chat screen
-//     if (initialMessage != null) {
-//       _handleMessage(initialMessage);
-//     }
-//     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
-//       print("message recieved");
-//       print(event.notification.body);
-//     });
-//     // Also handle any interaction when the app is in the background via a
-//     // Stream listener
-//     FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
-//   }
-//
-//   void _handleMessage(RemoteMessage message) {
-//     navigationToNextPage();
-//     if (message.data['type'] == 'chat') {
-//       // Navigator.pushNamed(context, '/chat',
-//       //   arguments: ChatArguments(message),
-//       // );
-//     }
-//   }
   @override
   void initState() {
     super.initState();
@@ -121,20 +89,12 @@ class SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-// To make this screen full screen.
-// It will hide status bar and notch.
-//    SystemChrome.setEnabledSystemUIOverlays([]);
+
     Size size = MediaQuery.of(context).size;
-// full screen image for splash screen.
-//    return Container(
-//      color: Colors.white,
-//      padding: const EdgeInsets.all(25),
-//        child: Image.asset("lib/images/khuddamLogo.jpeg"));
+
     return Column(
       children: [
-//      Padding(padding: EdgeInsets.symmetric(vertical: 40)),
-//      /*Image.asset("lib/images/khuddamLogo.jpeg",
-//                  width: 250, height: 250, fit: BoxFit.fill),*/
+
         Container(
             color: Colors.white,
             alignment: Alignment.center,
@@ -180,8 +140,6 @@ class MyApp extends StatelessWidget {
         drawer_routes.home: (context) => homePageWithWidgets(),
 //        drawer_routes.contact: (context) => YoutubePlayerDemo(title: 'Youtube Player'),
         drawer_routes.surahList: (context) => surahListPage(),
-//        pageRoutes.profile: (context) => profilePage(),
-//        pageRoutes.notification: (context) => notificationPage(),
       },
     );
   }
